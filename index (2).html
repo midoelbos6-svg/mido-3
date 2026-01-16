@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="الجسر - منصتك الأولى لاكتشاف أحدث صيحات الذكاء الاصطناعي في السوشيال ميديا. احصل على برومبتات AI مجانية للصور والفيديوهات والشعارات.">
+    <meta name="keywords" content="AI prompts, الذكاء الاصطناعي, برومبتات, صور AI, فيديو AI, شعارات, Canva, تصميم">
+    <meta name="author" content="الجسر">
+    <meta property="og:title" content="الجسر - صيحات الذكاء الاصطناعي">
+    <meta property="og:description" content="اكتشف أحدث صيحات AI في السوشيال ميديا">
+    <meta property="og:type" content="website">
+    <title>الجسر | AI Trends & Prompts</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Tajawal', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3); }
+        .page { display: none; }
+        .page.active { display: block; }
+        .nav-link.active { color: #667eea; border-bottom: 2px solid #667eea; }
+        .modal { backdrop-filter: blur(8px); }
+        .prompt-box { background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%); }
+        .shine { position: relative; overflow: hidden; }
+        .shine::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%); transform: rotate(30deg); animation: shine 3s infinite; }
+        @keyframes shine { 0% { left: -50%; } 100% { left: 150%; } }
+        .floating { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .adsense-placeholder { background: linear-gradient(45deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%); background-size: 200% 200%; animation: shimmer 2s infinite; }
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+        .image-preview { max-height: 150px; object-fit: cover; }
+        .tab-btn.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .stat-card { transition: all 0.3s ease; }
+        .stat-card:hover { transform: scale(1.05); }
+        .bulk-item { animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .progress-bar { transition: width 0.3s ease; }
+        .category-tag { transition: all 0.2s ease; }
+        .category-tag:hover { transform: scale(1.05); }
+        .drag-over { border-color: #667eea !important; background-color: #f0f0ff !important; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2 cursor-pointer" onclick="showPage('home')">
+                    <div class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">ج</span>
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">الجسر</span>
+                </div>
+                
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="#" onclick="showPage('home')" class="nav-link active px-3 py-2 text-sm font-medium hover:text-purple-600 transition">الرئيسية</a>
+                    <a href="#" onclick="showPage('images')" class="nav-link px-3 py-2 text-sm font-medium hover:text-purple-600 transition">صور AI</a>
+                    <a href="#" onclick="showPage('videos')" class="nav-link px-3 py-2 text-sm font-medium hover:text-purple-600 transition">فيديوهات AI</a>
+                    <a href="#" onclick="showPage('logos')" class="nav-link px-3 py-2 text-sm font-medium hover:text-purple-600 transition">شعارات AI</a>
+                    <a href="#" onclick="showPage('infographics')" class="nav-link px-3 py-2 text-sm font-medium hover:text-purple-600 transition">إنفوجرافيك</a>
+                    <a href="#" onclick="showPage('canva')" class="nav-link px-3 py-2 text-sm font-medium hover:text-purple-600 transition">قوالب Canva</a>
+                    <a href="#" onclick="showPage('vip')" class="nav-link px-3 py-2 text-sm font-medium text-amber-600 hover:text-amber-700 transition flex items-center gap-1">
+                        <span>👑</span> VIP
+                    </a>
+                    <a href="#" onclick="showPage('about')" class="nav-link px-3 py-2 text-sm font-medium hover:text-purple-600 transition">من نحن</a>
+                    <a href="#" onclick="showPage('contact')" class="nav-link px-3 py-2 text-sm font-medium hover:text-purple-600 transition">تواصل معنا</a>
+                    <a href="#" onclick="openAdminLogin()" class="nav-link px-3 py-2 text-sm font-medium text-red-600 hover:text-red-700 transition flex items-center gap-1">
+                        <span>⚙️</span> الإدارة
+                    </a>
+                </div>
+                
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#" onclick="showPage('home'); toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-purple-50 font-medium">الرئيسية</a>
+                <a href="#" onclick="showPage('images'); toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-purple-50 font-medium">صور AI</a>
+                <a href="#" onclick="showPage('videos'); toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-purple-50 font-medium">فيديوهات AI</a>
+                <a href="#" onclick="showPage('logos'); toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-purple-50 font-medium">شعارات AI</a>
+                <a href="#" onclick="showPage('infographics'); toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-purple-50 font-medium">إنفوجرافيك</a>
+                <a href="#" onclick="showPage('canva'); toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-purple-50 font-medium">قوالب Canva</a>
+                <a href="#" onclick="showPage('vip'); toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-amber-50 font-medium text-amber-600">👑 VIP</a>
+                <a href="#" onclick="showPage('about'); toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-purple-50 font-medium">من نحن</a>
+                <a href="#" onclick="showPage('contact'); toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-purple-50 font-medium">تواصل معنا</a>
+                <a href="#" onclick="openAdminLogin(); toggleMobileMenu()" class="block px-3 py-2 rounded-lg hover:bg-red-50 font-medium text-red-600">⚙️ الإدارة</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16">
+        <!-- HOME PAGE -->
+        <div id="home" class="page active">
+            <section class="gradient-bg min-h-[90vh] flex items-center relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10">
+                    <div class="absolute top-20 right-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+                    <div class="absolute bottom-20 left-20 w-96 h-96 bg-purple-300 rounded-full blur-3xl"></div>
+                </div>
+                <div class="max-w-7xl mx-auto px-4 py-20 relative z-10">
+                    <div class="text-center text-white">
+                        <div class="floating inline-block mb-6">
+                            <span class="text-6xl">🌉</span>
+                        </div>
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6">
+                            مرحباً بك في <span class="text-yellow-300">الجسر</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+                            منصتك الأولى لاكتشاف أحدث صيحات الذكاء الاصطناعي في السوشيال ميديا
+                            <br>احصل على برومبتات AI حصرية ومجانية!
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <button onclick="showPage('images')" class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 hover:text-purple-800 transition transform hover:scale-105 shadow-xl">
+                                🚀 ابدأ الاستكشاف
+                            </button>
+                            <button onclick="showPage('vip')" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition">
+                                👑 عضوية VIP
+                            </button>
+                        </div>
+                        <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm opacity-80" id="statsCounter"></div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="max-w-7xl mx-auto px-4 py-4">
+                <div class="adsense-placeholder h-24 rounded-xl flex items-center justify-center text-gray-400 border-2 border-dashed border-gray-300">
+                    إعلان Google AdSense
+                </div>
+            </div>
+
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="text-center mb-16">
+                        <span class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm font-bold">الأقسام</span>
+                        <h2 class="text-3xl md:text-5xl font-bold mt-4 mb-4">اكتشف صيحات <span class="gradient-text">الذكاء الاصطناعي</span></h2>
+                        <p class="text-gray-600 text-lg">اختر القسم الذي يناسب احتياجاتك</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="card-hover bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl overflow-hidden border border-purple-100">
+                            <div class="h-48 bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-6xl">📷</div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">صور AI</h3>
+                                <p class="text-gray-600 mb-4">برومبتات لإنشاء صور مذهلة باستخدام Midjourney, DALL-E, Stable Diffusion</p>
+                                <button onclick="showPage('images')" class="w-full gradient-bg text-white py-3 rounded-xl font-bold hover:opacity-90 transition">استكشف الآن →</button>
+                            </div>
+                        </div>
+
+                        <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl overflow-hidden border border-blue-100">
+                            <div class="h-48 bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-6xl">🎬</div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">فيديوهات AI</h3>
+                                <p class="text-gray-600 mb-4">برومبتات لإنشاء فيديوهات رائعة باستخدام Runway, Pika, Sora</p>
+                                <button onclick="showPage('videos')" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 rounded-xl font-bold hover:opacity-90 transition">استكشف الآن →</button>
+                            </div>
+                        </div>
+
+                        <div class="card-hover bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl overflow-hidden border border-amber-100">
+                            <div class="h-48 bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-6xl">🏷️</div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">شعارات AI</h3>
+                                <p class="text-gray-600 mb-4">برومبتات لتصميم شعارات احترافية لعلامتك التجارية</p>
+                                <button onclick="showPage('logos')" class="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white py-3 rounded-xl font-bold hover:opacity-90 transition">استكشف الآن →</button>
+                            </div>
+                        </div>
+
+                        <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl overflow-hidden border border-green-100">
+                            <div class="h-48 bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-6xl">📊</div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">إنفوجرافيك</h3>
+                                <p class="text-gray-600 mb-4">برومبتات لإنشاء رسوم بيانية ومعلوماتية جذابة</p>
+                                <button onclick="showPage('infographics')" class="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-3 rounded-xl font-bold hover:opacity-90 transition">استكشف الآن →</button>
+                            </div>
+                        </div>
+
+                        <div class="card-hover bg-gradient-to-br from-violet-50 to-fuchsia-50 rounded-2xl overflow-hidden border border-violet-100">
+                            <div class="h-48 bg-gradient-to-br from-violet-400 to-fuchsia-500 flex items-center justify-center text-6xl">🎨</div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">قوالب Canva</h3>
+                                <p class="text-gray-600 mb-4">قوالب جاهزة للتحرير على Canva للإعلانات والسوشيال ميديا</p>
+                                <button onclick="showPage('canva')" class="w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white py-3 rounded-xl font-bold hover:opacity-90 transition">استكشف الآن →</button>
+                            </div>
+                        </div>
+
+                        <div class="card-hover bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl overflow-hidden border-2 border-yellow-400 relative shine">
+                            <div class="absolute top-4 left-4 bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-bold">مميز</div>
+                            <div class="h-48 bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-6xl">👑</div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">عضوية VIP</h3>
+                                <p class="text-gray-600 mb-4">وصول غير محدود لجميع البرومبتات بدون متابعة</p>
+                                <button onclick="showPage('vip')" class="w-full bg-gradient-to-r from-yellow-500 to-amber-500 text-black py-3 rounded-xl font-bold hover:opacity-90 transition">اشترك الآن →</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="text-center mb-16">
+                        <span class="bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm font-bold">🔥 الأكثر رواجاً</span>
+                        <h2 class="text-3xl md:text-5xl font-bold mt-4 mb-4">أحدث الصيحات</h2>
+                        <p class="text-gray-600 text-lg">برومبتات منتقاة بعناية من أكثر التريندات انتشاراً</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" id="trendingGrid"></div>
+                </div>
+            </section>
+
+            <div class="max-w-7xl mx-auto px-4 py-4">
+                <div class="adsense-placeholder h-32 rounded-xl flex items-center justify-center text-gray-400 border-2 border-dashed border-gray-300">
+                    إعلان Google AdSense
+                </div>
+            </div>
+        </div>
+
+        <!-- AI IMAGES PAGE -->
+        <div id="images" class="page">
+            <section class="bg-gradient-to-br from-pink-500 to-purple-600 py-20">
+                <div class="max-w-7xl mx-auto px-4 text-center text-white">
+                    <span class="text-6xl mb-4 block">📷</span>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">صور AI</h1>
+                    <p class="text-xl opacity-90">برومبتات احترافية لإنشاء صور مذهلة</p>
+                    <p class="mt-4 text-lg opacity-70" id="imagesCount"></p>
+                </div>
+            </section>
+            
+            <div class="max-w-7xl mx-auto px-4 py-12">
+                <div class="flex flex-wrap gap-3 mb-8 justify-center" id="imagesFilters"></div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="imagesGrid"></div>
+            </div>
+        </div>
+
+        <!-- AI VIDEOS PAGE -->
+        <div id="videos" class="page">
+            <section class="bg-gradient-to-br from-blue-500 to-cyan-600 py-20">
+                <div class="max-w-7xl mx-auto px-4 text-center text-white">
+                    <span class="text-6xl mb-4 block">🎬</span>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">فيديوهات AI</h1>
+                    <p class="text-xl opacity-90">برومبتات لإنشاء فيديوهات سينمائية</p>
+                    <p class="mt-4 text-lg opacity-70" id="videosCount"></p>
+                </div>
+            </section>
+            
+            <div class="max-w-7xl mx-auto px-4 py-12">
+                <div class="flex flex-wrap gap-3 mb-8 justify-center" id="videosFilters"></div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="videosGrid"></div>
+            </div>
+        </div>
+
+        <!-- AI LOGOS PAGE -->
+        <div id="logos" class="page">
+            <section class="bg-gradient-to-br from-amber-500 to-orange-600 py-20">
+                <div class="max-w-7xl mx-auto px-4 text-center text-white">
+                    <span class="text-6xl mb-4 block">🏷️</span>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">شعارات AI</h1>
+                    <p class="text-xl opacity-90">برومبتات لتصميم هوية بصرية احترافية</p>
+                    <p class="mt-4 text-lg opacity-70" id="logosCount"></p>
+                </div>
+            </section>
+            
+            <div class="max-w-7xl mx-auto px-4 py-12">
+                <div class="flex flex-wrap gap-3 mb-8 justify-center" id="logosFilters"></div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="logosGrid"></div>
+            </div>
+        </div>
+
+        <!-- AI INFOGRAPHICS PAGE -->
+        <div id="infographics" class="page">
+            <section class="bg-gradient-to-br from-green-500 to-emerald-600 py-20">
+                <div class="max-w-7xl mx-auto px-4 text-center text-white">
+                    <span class="text-6xl mb-4 block">📊</span>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">إنفوجرافيك AI</h1>
+                    <p class="text-xl opacity-90">برومبتات لإنشاء رسوم معلوماتية جذابة</p>
+                    <p class="mt-4 text-lg opacity-70" id="infographicsCount"></p>
+                </div>
+            </section>
+            
+            <div class="max-w-7xl mx-auto px-4 py-12">
+                <div class="flex flex-wrap gap-3 mb-8 justify-center" id="infographicsFilters"></div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="infographicsGrid"></div>
+            </div>
+        </div>
+
+        <!-- CANVA TEMPLATES PAGE -->
+        <div id="canva" class="page">
+            <section class="bg-gradient-to-br from-violet-500 to-fuchsia-600 py-20">
+                <div class="max-w-7xl mx-auto px-4 text-center text-white">
+                    <span class="text-6xl mb-4 block">🎨</span>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">قوالب Canva</h1>
+                    <p class="text-xl opacity-90">قوالب جاهزة للتحرير مباشرة على Canva</p>
+                    <p class="mt-4 text-lg opacity-70" id="canvaCount"></p>
+                </div>
+            </section>
+            
+            <div class="max-w-7xl mx-auto px-4 py-12">
+                <div class="flex flex-wrap gap-3 mb-8 justify-center" id="canvaFilters"></div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="canvaGrid"></div>
+            </div>
+        </div>
+
+        <!-- VIP PAGE -->
+        <div id="vip" class="page">
+            <section class="bg-gradient-to-br from-yellow-400 to-amber-500 py-20 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-20">
+                    <div class="absolute top-10 right-10 text-8xl">👑</div>
+                    <div class="absolute bottom-10 left-10 text-8xl">⭐</div>
+                </div>
+                <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+                    <span class="text-6xl mb-4 block">👑</span>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-black">عضوية VIP</h1>
+                    <p class="text-xl text-black/80">وصول غير محدود لجميع البرومبتات والقوالب</p>
+                </div>
+            </section>
+            
+            <div class="max-w-5xl mx-auto px-4 py-16">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl p-8 border-2 border-gray-200 shadow-lg">
+                        <div class="text-center mb-8">
+                            <span class="text-4xl">🆓</span>
+                            <h3 class="text-2xl font-bold mt-4">العضوية المجانية</h3>
+                            <div class="mt-4">
+                                <span class="text-4xl font-bold">$0</span>
+                                <span class="text-gray-500">/شهرياً</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3"><span class="text-green-500">✓</span><span>الوصول لجميع البرومبتات</span></li>
+                            <li class="flex items-center gap-3"><span class="text-green-500">✓</span><span>قوالب Canva الأساسية</span></li>
+                            <li class="flex items-center gap-3"><span class="text-amber-500">⚠️</span><span>يتطلب متابعة الصفحة</span></li>
+                            <li class="flex items-center gap-3 text-gray-400"><span>✗</span><span>بدون إعلانات</span></li>
+                        </ul>
+                        <button class="w-full bg-gray-200 text-gray-700 py-3 rounded-xl font-bold">الباقة الحالية</button>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-8 border-2 border-yellow-400 shadow-xl relative shine">
+                        <div class="absolute -top-4 right-4 bg-red-500 text-white px-4 py-1 rounded-full text-sm font-bold">الأكثر شعبية</div>
+                        <div class="text-center mb-8">
+                            <span class="text-4xl">👑</span>
+                            <h3 class="text-2xl font-bold mt-4">عضوية VIP</h3>
+                            <div class="mt-4">
+                                <span class="text-4xl font-bold text-amber-600">$9.99</span>
+                                <span class="text-gray-500">/شهرياً</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3"><span class="text-green-500">✓</span><span class="font-medium">وصول غير محدود لكل البرومبتات</span></li>
+                            <li class="flex items-center gap-3"><span class="text-green-500">✓</span><span class="font-medium">جميع قوالب Canva</span></li>
+                            <li class="flex items-center gap-3"><span class="text-green-500">✓</span><span class="font-medium">بدون حاجة للمتابعة</span></li>
+                            <li class="flex items-center gap-3"><span class="text-green-500">✓</span><span class="font-medium">تجربة بدون إعلانات</span></li>
+                            <li class="flex items-center gap-3"><span class="text-green-500">✓</span><span class="font-medium">دعم أولوي 24/7</span></li>
+                        </ul>
+                        <button onclick="openVIPModal()" class="w-full bg-gradient-to-r from-yellow-500 to-amber-500 text-black py-4 rounded-xl font-bold text-lg hover:opacity-90 transition transform hover:scale-105">🚀 اشترك الآن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT PAGE -->
+        <div id="about" class="page">
+            <section class="gradient-bg py-20">
+                <div class="max-w-7xl mx-auto px-4 text-center text-white">
+                    <span class="text-6xl mb-4 block">🌉</span>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">من نحن</h1>
+                    <p class="text-xl opacity-90">تعرف على قصة الجسر</p>
+                </div>
+            </section>
+            
+            <div class="max-w-4xl mx-auto px-4 py-16">
+                <div class="bg-white rounded-2xl p-8 shadow-lg mb-8">
+                    <h2 class="text-2xl font-bold mb-4 gradient-text">رؤيتنا</h2>
+                    <p class="text-gray-600 leading-relaxed">نؤمن في "الجسر" بأن الذكاء الاصطناعي يجب أن يكون متاحاً للجميع. نسعى لبناء جسر بين التقنية الحديثة والمستخدم العربي.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h2 class="text-2xl font-bold mb-4 gradient-text">فريقنا</h2>
+                    <div class="grid grid-cols-3 gap-4 mt-8">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-purple-100 rounded-full mx-auto flex items-center justify-center text-3xl">👨‍💻</div>
+                            <p class="mt-2 font-medium">خبراء AI</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-blue-100 rounded-full mx-auto flex items-center justify-center text-3xl">🎨</div>
+                            <p class="mt-2 font-medium">مصممون</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-green-100 rounded-full mx-auto flex items-center justify-center text-3xl">✍️</div>
+                            <p class="mt-2 font-medium">كتّاب محتوى</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT PAGE -->
+        <div id="contact" class="page">
+            <section class="gradient-bg py-20">
+                <div class="max-w-7xl mx-auto px-4 text-center text-white">
+                    <span class="text-6xl mb-4 block">📬</span>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">تواصل معنا</h1>
+                    <p class="text-xl opacity-90">نسعد بسماع آرائكم واقتراحاتكم</p>
+                </div>
+            </section>
+            
+            <div class="max-w-4xl mx-auto px-4 py-16">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-xl font-bold mb-6">أرسل رسالة</h3>
+                        <form onsubmit="submitContact(event)">
+                            <div class="mb-4">
+                                <label class="block text-gray-700 font-medium mb-2">الاسم</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition" placeholder="اسمك الكريم">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 font-medium mb-2">البريد الإلكتروني</label>
+                                <input type="email" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition" placeholder="email@example.com">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-medium mb-2">الرسالة</label>
+                                <textarea required rows="5" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition resize-none" placeholder="اكتب رسالتك هنا..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full gradient-bg text-white py-3 rounded-xl font-bold hover:opacity-90 transition">إرسال الرسالة 📤</button>
+                        </form>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-2xl p-6 shadow-lg">
+                            <h4 class="font-bold mb-4 flex items-center gap-2"><span class="text-2xl">📧</span> البريد الإلكتروني</h4>
+                            <p class="text-gray-600">contact@aljisr.com</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-6 shadow-lg">
+                            <h4 class="font-bold mb-4 flex items-center gap-2"><span class="text-2xl">📱</span> تابعنا</h4>
+                            <div class="flex gap-4">
+                                <a href="#" class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl hover:opacity-80 transition">f</a>
+                                <a href="#" class="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center text-white text-xl hover:opacity-80 transition">📷</a>
+                                <a href="#" class="w-12 h-12 bg-sky-500 rounded-xl flex items-center justify-center text-white text-xl hover:opacity-80 transition">🐦</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADMIN PAGE -->
+        <div id="admin" class="page">
+            <section class="bg-gradient-to-br from-gray-800 to-gray-900 py-8">
+                <div class="max-w-7xl mx-auto px-4 text-center text-white">
+                    <span class="text-4xl mb-2 block">⚙️</span>
+                    <h1 class="text-2xl md:text-3xl font-bold mb-2">لوحة التحكم</h1>
+                    <p class="opacity-90">إدارة غير محدودة للمحتوى والبرومبتات</p>
+                </div>
+            </section>
+            
+            <div class="max-w-7xl mx-auto px-4 py-6">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
+                    <div class="stat-card bg-gradient-to-br from-pink-500 to-purple-600 text-white p-4 rounded-xl text-center">
+                        <span class="text-2xl block mb-1">📷</span>
+                        <span class="text-xl font-bold" id="statImages">0</span>
+                        <p class="text-xs opacity-80">صور AI</p>
+                    </div>
+                    <div class="stat-card bg-gradient-to-br from-blue-500 to-cyan-600 text-white p-4 rounded-xl text-center">
+                        <span class="text-2xl block mb-1">🎬</span>
+                        <span class="text-xl font-bold" id="statVideos">0</span>
+                        <p class="text-xs opacity-80">فيديوهات</p>
+                    </div>
+                    <div class="stat-card bg-gradient-to-br from-amber-500 to-orange-600 text-white p-4 rounded-xl text-center">
+                        <span class="text-2xl block mb-1">🏷️</span>
+                        <span class="text-xl font-bold" id="statLogos">0</span>
+                        <p class="text-xs opacity-80">شعارات</p>
+                    </div>
+                    <div class="stat-card bg-gradient-to-br from-green-500 to-emerald-600 text-white p-4 rounded-xl text-center">
+                        <span class="text-2xl block mb-1">📊</span>
+                        <span class="text-xl font-bold" id="statInfographics">0</span>
+                        <p class="text-xs opacity-80">إنفوجرافيك</p>
+                    </div>
+                    <div class="stat-card bg-gradient-to-br from-violet-500 to-fuchsia-600 text-white p-4 rounded-xl text-center">
+                        <span class="text-2xl block mb-1">🎨</span>
+                        <span class="text-xl font-bold" id="statCanva">0</span>
+                        <p class="text-xs opacity-80">قوالب Canva</p>
+                    </div>
+                </div>
+
+                <!-- Admin Tabs -->
+                <div class="flex flex-wrap gap-2 mb-6 overflow-x-auto">
+                    <button onclick="switchAdminTab('bulk')" class="tab-btn active px-4 py-2 rounded-xl font-bold transition text-sm whitespace-nowrap">📦 إضافة متعددة</button>
+                    <button onclick="switchAdminTab('add')" class="tab-btn px-4 py-2 rounded-xl font-bold bg-gray-200 transition text-sm whitespace-nowrap">➕ إضافة فردية</button>
+                    <button onclick="switchAdminTab('manage')" class="tab-btn px-4 py-2 rounded-xl font-bold bg-gray-200 transition text-sm whitespace-nowrap">📋 إدارة المحتوى</button>
+                    <button onclick="switchAdminTab('categories')" class="tab-btn px-4 py-2 rounded-xl font-bold bg-gray-200 transition text-sm whitespace-nowrap">🏷️ التصنيفات</button>
+                    <button onclick="switchAdminTab('canvaAdmin')" class="tab-btn px-4 py-2 rounded-xl font-bold bg-gray-200 transition text-sm whitespace-nowrap">🎨 قوالب Canva</button>
+                    <button onclick="switchAdminTab('settings')" class="tab-btn px-4 py-2 rounded-xl font-bold bg-gray-200 transition text-sm whitespace-nowrap">⚙️ الإعدادات</button>
+                </div>
+
+                <!-- Bulk Add Tab -->
+                <div id="bulkTab" class="admin-tab">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                            <h3 class="text-xl font-bold flex items-center gap-2">
+                                <span class="text-2xl">📦</span> إضافة برومبتات متعددة (عدد غير محدود)
+                            </h3>
+                            <div class="flex gap-2">
+                                <select id="bulkType" class="px-4 py-2 rounded-xl border-2 border-gray-200 font-bold" onchange="updateBulkCategory()">
+                                    <option value="images">📷 صور AI</option>
+                                    <option value="videos">🎬 فيديوهات</option>
+                                    <option value="logos">🏷️ شعارات</option>
+                                    <option value="infographics">📊 إنفوجرافيك</option>
+                                </select>
+                                <select id="bulkCategory" class="px-4 py-2 rounded-xl border-2 border-gray-200"></select>
+                            </div>
+                        </div>
+
+                        <!-- Bulk Items Container -->
+                        <div id="bulkItemsContainer" class="space-y-4 mb-6">
+                            <!-- Items will be added here -->
+                        </div>
+
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="addBulkItem()" class="px-6 py-3 bg-blue-500 text-white rounded-xl font-bold hover:bg-blue-600 transition flex items-center gap-2">
+                                <span>➕</span> إضافة برومبت جديد
+                            </button>
+                            <button onclick="addMultipleBulkItems(5)" class="px-6 py-3 bg-purple-500 text-white rounded-xl font-bold hover:bg-purple-600 transition flex items-center gap-2">
+                                <span>📋</span> إضافة 5 برومبتات
+                            </button>
+                            <button onclick="addMultipleBulkItems(10)" class="px-6 py-3 bg-indigo-500 text-white rounded-xl font-bold hover:bg-indigo-600 transition flex items-center gap-2">
+                                <span>📋</span> إضافة 10 برومبتات
+                            </button>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-gray-50 rounded-xl">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold">البرومبتات الجاهزة للإضافة: <span id="bulkCount" class="text-purple-600">0</span></span>
+                                <button onclick="saveBulkItems()" class="px-8 py-3 gradient-bg text-white rounded-xl font-bold hover:opacity-90 transition flex items-center gap-2">
+                                    <span>💾</span> حفظ الكل
+                                </button>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div id="bulkProgress" class="progress-bar gradient-bg h-2 rounded-full" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Add Tab -->
+                <div id="addTab" class="admin-tab hidden">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                            <span class="text-2xl">➕</span> إضافة برومبت واحد
+                        </h3>
+                        
+                        <form id="addPromptForm" onsubmit="addNewPrompt(event)">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">عنوان البرومبت *</label>
+                                    <input type="text" id="promptTitle" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition" placeholder="مثال: بورتريه سينمائي">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">نوع المحتوى *</label>
+                                    <select id="promptType" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition" onchange="updateCategoryOptions()">
+                                        <option value="">اختر النوع</option>
+                                        <option value="images">صور AI</option>
+                                        <option value="videos">فيديوهات AI</option>
+                                        <option value="logos">شعارات AI</option>
+                                        <option value="infographics">إنفوجرافيك</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">التصنيف *</label>
+                                    <select id="promptCategory" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition">
+                                        <option value="">اختر النوع أولاً</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">الإيموجي</label>
+                                    <input type="text" id="promptEmoji" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition" placeholder="📷" maxlength="4">
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label class="block text-gray-700 font-bold mb-2">نص البرومبت *</label>
+                                <textarea id="promptText" required rows="3" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition resize-none" placeholder="اكتب البرومبت هنا..."></textarea>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label class="block text-gray-700 font-bold mb-2">صورة المعاينة</label>
+                                <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-purple-500 transition cursor-pointer" onclick="document.getElementById('imageUpload').click()" id="dropZone">
+                                    <input type="file" id="imageUpload" accept="image/*" class="hidden" onchange="previewImage(event)">
+                                    <div id="imagePreviewContainer" class="hidden">
+                                        <img id="imagePreview" class="image-preview w-full rounded-xl mb-2">
+                                        <button type="button" onclick="removeImage(event)" class="text-red-500 hover:text-red-700 text-sm">🗑️ إزالة</button>
+                                    </div>
+                                    <div id="uploadPlaceholder">
+                                        <span class="text-3xl block mb-2">📁</span>
+                                        <p class="text-gray-500 text-sm">اضغط أو اسحب صورة هنا</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 flex items-center gap-4">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="checkbox" id="promptTrending" class="w-5 h-5 rounded text-purple-600">
+                                    <span class="font-medium">🔥 ترند</span>
+                                </label>
+                            </div>
+                            
+                            <div class="mt-6 flex gap-3">
+                                <button type="submit" class="flex-1 gradient-bg text-white py-3 rounded-xl font-bold hover:opacity-90 transition">
+                                    ✅ إضافة البرومبت
+                                </button>
+                                <button type="button" onclick="resetForm()" class="px-6 py-3 bg-gray-200 rounded-xl font-bold hover:bg-gray-300 transition">
+                                    🔄 مسح
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Manage Content Tab -->
+                <div id="manageTab" class="admin-tab hidden">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                            <h3 class="text-xl font-bold flex items-center gap-2">
+                                <span class="text-2xl">📋</span> إدارة المحتوى
+                            </h3>
+                            <div class="flex gap-2">
+                                <input type="text" id="searchContent" placeholder="🔍 بحث..." class="px-4 py-2 rounded-xl border-2 border-gray-200" oninput="filterManageContent()">
+                                <select id="manageFilter" onchange="filterManageContent()" class="px-4 py-2 rounded-xl border-2 border-gray-200">
+                                    <option value="all">كل الأنواع</option>
+                                    <option value="images">صور AI</option>
+                                    <option value="videos">فيديوهات AI</option>
+                                    <option value="logos">شعارات AI</option>
+                                    <option value="infographics">إنفوجرافيك</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div id="contentList" class="space-y-3 max-h-[60vh] overflow-y-auto"></div>
+                        
+                        <div class="mt-4 flex justify-between items-center text-sm text-gray-500">
+                            <span id="contentCount">0 عنصر</span>
+                            <button onclick="deleteAllFiltered()" class="text-red-500 hover:text-red-700 font-medium">🗑️ حذف المحدد</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories Tab -->
+                <div id="categoriesTab" class="admin-tab hidden">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                            <span class="text-2xl">🏷️</span> إدارة التصنيفات
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Add Category -->
+                            <div class="p-4 bg-gray-50 rounded-xl">
+                                <h4 class="font-bold mb-4">➕ إضافة تصنيف جديد</h4>
+                                <div class="space-y-3">
+                                    <select id="categoryType" class="w-full px-4 py-2 rounded-xl border-2 border-gray-200">
+                                        <option value="images">صور AI</option>
+                                        <option value="videos">فيديوهات AI</option>
+                                        <option value="logos">شعارات AI</option>
+                                        <option value="infographics">إنفوجرافيك</option>
+                                        <option value="canva">قوالب Canva</option>
+                                    </select>
+                                    <input type="text" id="categoryValue" placeholder="القيمة (بالإنجليزية)" class="w-full px-4 py-2 rounded-xl border-2 border-gray-200">
+                                    <input type="text" id="categoryLabel" placeholder="الاسم (بالعربية)" class="w-full px-4 py-2 rounded-xl border-2 border-gray-200">
+                                    <button onclick="addNewCategory()" class="w-full px-4 py-2 gradient-bg text-white rounded-xl font-bold">إضافة التصنيف</button>
+                                </div>
+                            </div>
+
+                            <!-- Existing Categories -->
+                            <div class="p-4 bg-gray-50 rounded-xl">
+                                <h4 class="font-bold mb-4">📁 التصنيفات الحالية</h4>
+                                <div id="categoriesList" class="space-y-3 max-h-80 overflow-y-auto"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canva Admin Tab -->
+                <div id="canvaAdminTab" class="admin-tab hidden">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                            <span class="text-2xl">🎨</span> إضافة قوالب Canva
+                        </h3>
+                        
+                        <form id="addCanvaForm" onsubmit="addNewCanvaTemplate(event)">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">عنوان القالب *</label>
+                                    <input type="text" id="canvaTitle" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition" placeholder="مثال: إعلان فيسبوك">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">التصنيف *</label>
+                                    <select id="canvaCategory" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition"></select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">رابط Canva *</label>
+                                    <input type="url" id="canvaLink" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition" placeholder="https://canva.com/...">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 font-bold mb-2">الإيموجي</label>
+                                    <input type="text" id="canvaEmoji" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition" placeholder="📢" maxlength="4">
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label class="block text-gray-700 font-bold mb-2">وصف القالب</label>
+                                <input type="text" id="canvaGuide" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition" placeholder="وصف مختصر للقالب...">
+                            </div>
+                            
+                            <div class="mt-6">
+                                <button type="submit" class="w-full gradient-bg text-white py-3 rounded-xl font-bold hover:opacity-90 transition">
+                                    ✅ إضافة القالب
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <hr class="my-6">
+                        
+                        <h4 class="font-bold mb-4">القوالب الحالية (<span id="canvaListCount">0</span>)</h4>
+                        <div id="canvaList" class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 max-h-60 overflow-y-auto"></div>
+                    </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div id="settingsTab" class="admin-tab hidden">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                            <span class="text-2xl">⚙️</span> الإعدادات
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="p-4 bg-gray-50 rounded-xl">
+                                <h4 class="font-bold mb-4">🔗 رابط صفحة فيسبوك</h4>
+                                <input type="url" id="facebookLink" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition" placeholder="https://facebook.com/yourpage">
+                                <button onclick="saveFacebookLink()" class="mt-3 px-6 py-2 gradient-bg text-white rounded-xl font-bold">حفظ</button>
+                            </div>
+                            
+                            <div class="p-4 bg-gray-50 rounded-xl">
+                                <h4 class="font-bold mb-4">🔐 تغيير كلمة المرور</h4>
+                                <input type="password" id="newPassword" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition mb-2" placeholder="كلمة المرور الجديدة">
+                                <input type="password" id="confirmPassword" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition" placeholder="تأكيد كلمة المرور">
+                                <button onclick="changePassword()" class="mt-3 px-6 py-2 gradient-bg text-white rounded-xl font-bold">تغيير</button>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 p-4 bg-red-50 rounded-xl border-2 border-red-200">
+                            <h4 class="font-bold mb-4 text-red-600">⚠️ إدارة البيانات</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <button onclick="exportData()" class="px-4 py-2 bg-blue-500 text-white rounded-xl font-bold text-sm">📥 تصدير</button>
+                                <button onclick="importData()" class="px-4 py-2 bg-green-500 text-white rounded-xl font-bold text-sm">📤 استيراد</button>
+                                <input type="file" id="importFile" accept=".json" class="hidden" onchange="handleImport(event)">
+                                <button onclick="clearAllData()" class="px-4 py-2 bg-red-500 text-white rounded-xl font-bold text-sm">🗑️ حذف الكل</button>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 text-center">
+                            <button onclick="logoutAdmin()" class="px-8 py-3 bg-gray-800 text-white rounded-xl font-bold hover:bg-gray-900 transition">
+                                🚪 تسجيل الخروج
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Follow Gate Modal -->
+    <div id="followModal" class="modal fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full overflow-hidden">
+            <div class="gradient-bg p-6 text-center text-white">
+                <span class="text-5xl block mb-2">🔒</span>
+                <h3 class="text-2xl font-bold">فتح البرومبت</h3>
+            </div>
+            <div class="p-6">
+                <p class="text-center text-gray-600 mb-6">للحصول على هذا البرومبت مجاناً، يرجى متابعة صفحتنا على فيسبوك</p>
+                <div id="followStep" class="space-y-4">
+                    <a id="facebookFollowLink" href="#" target="_blank" class="block w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-center hover:bg-blue-700 transition">
+                        📘 تابعنا على فيسبوك
+                    </a>
+                    <button onclick="confirmFollow()" class="w-full bg-green-500 text-white py-4 rounded-xl font-bold hover:bg-green-600 transition">
+                        ✅ لقد تابعت - افتح البرومبت
+                    </button>
+                    <button onclick="closeModal()" class="w-full text-gray-500 py-2 hover:text-gray-700 transition">إلغاء</button>
+                </div>
+                <div id="promptReveal" class="hidden">
+                    <div class="bg-green-100 text-green-700 p-3 rounded-xl mb-4 text-center">✅ شكراً لمتابعتك! إليك البرومبت:</div>
+                    <div class="prompt-box text-green-400 p-4 rounded-xl text-sm leading-relaxed mb-4 relative">
+                        <pre id="promptTextDisplay" class="whitespace-pre-wrap font-mono text-xs"></pre>
+                        <button onclick="copyPrompt()" class="absolute top-2 left-2 bg-purple-600 text-white px-3 py-1 rounded-lg text-xs hover:bg-purple-700 transition">📋 نسخ</button>
+                    </div>
+                    <button onclick="closeModal()" class="w-full gradient-bg text-white py-3 rounded-xl font-bold hover:opacity-90 transition">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIP Modal -->
+    <div id="vipModal" class="modal fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full overflow-hidden">
+            <div class="bg-gradient-to-r from-yellow-400 to-amber-500 p-6 text-center">
+                <span class="text-5xl block mb-2">👑</span>
+                <h3 class="text-2xl font-bold text-black">اشتراك VIP</h3>
+            </div>
+            <div class="p-6">
+                <p class="text-center text-gray-600 mb-6">للاشتراك في عضوية VIP، يرجى التواصل معنا:</p>
+                <div class="space-y-4">
+                    <a href="mailto:vip@aljisr.com" class="block w-full bg-purple-600 text-white py-3 rounded-xl font-bold text-center hover:bg-purple-700 transition">📧 البريد الإلكتروني</a>
+                    <a href="https://wa.me/1234567890" target="_blank" class="block w-full bg-green-500 text-white py-3 rounded-xl font-bold text-center hover:bg-green-600 transition">💬 واتساب</a>
+                    <button onclick="closeVIPModal()" class="w-full text-gray-500 py-2 hover:text-gray-700 transition">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="modal fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full overflow-hidden">
+            <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-6 text-center text-white">
+                <span class="text-5xl block mb-2">🔐</span>
+                <h3 class="text-2xl font-bold">تسجيل دخول المدير</h3>
+            </div>
+            <div class="p-6">
+                <form onsubmit="loginAdmin(event)">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-bold mb-2">كلمة المرور</label>
+                        <input type="password" id="adminPassword" required class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition" placeholder="أدخل كلمة المرور">
+                    </div>
+                    <button type="submit" class="w-full gradient-bg text-white py-3 rounded-xl font-bold hover:opacity-90 transition">🔓 دخول</button>
+                    <button type="button" onclick="closeAdminLogin()" class="w-full text-gray-500 py-2 mt-2 hover:text-gray-700 transition">إلغاء</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="gradient-bg p-4 text-center text-white sticky top-0">
+                <h3 class="text-xl font-bold">✏️ تعديل البرومبت</h3>
+            </div>
+            <div class="p-6">
+                <form id="editForm" onsubmit="saveEdit(event)">
+                    <input type="hidden" id="editId">
+                    <input type="hidden" id="editType">
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 font-bold mb-2">العنوان</label>
+                            <input type="text" id="editTitle" required class="w-full px-4 py-2 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-bold mb-2">الإيموجي</label>
+                            <input type="text" id="editEmoji" class="w-full px-4 py-2 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition" maxlength="4">
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label class="block text-gray-700 font-bold mb-2">البرومبت</label>
+                        <textarea id="editPrompt" required rows="4" class="w-full px-4 py-2 rounded-xl border-2 border-gray-200 focus:border-purple-500 outline-none transition resize-none"></textarea>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" id="editTrending" class="w-5 h-5 rounded text-purple-600">
+                            <span class="font-medium">🔥 ترند</span>
+                        </label>
+                    </div>
+                    
+                    <div class="mt-4 flex gap-3">
+                        <button type="submit" class="flex-1 gradient-bg text-white py-3 rounded-xl font-bold hover:opacity-90 transition">💾 حفظ</button>
+                        <button type="button" onclick="closeEditModal()" class="px-6 py-3 bg-gray-200 rounded-xl font-bold hover:bg-gray-300 transition">إلغاء</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-xl shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+        <span id="toastMessage">تم بنجاح!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">ج</span>
+                        </div>
+                        <span class="text-2xl font-bold">الجسر</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">منصتك الأولى لاكتشاف أحدث صيحات الذكاء الاصطناعي</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" onclick="showPage('home')" class="hover:text-white transition">الرئيسية</a></li>
+                        <li><a href="#" onclick="showPage('images')" class="hover:text-white transition">صور AI</a></li>
+                        <li><a href="#" onclick="showPage('videos')" class="hover:text-white transition">فيديوهات AI</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">الدعم</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" onclick="showPage('about')" class="hover:text-white transition">من نحن</a></li>
+                        <li><a href="#" onclick="showPage('contact')" class="hover:text-white transition">تواصل معنا</a></li>
+                        <li><a href="#" onclick="showPage('vip')" class="hover:text-white transition">عضوية VIP</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">تابعنا</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:opacity-80 transition">f</a>
+                        <a href="#" class="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center hover:opacity-80 transition">📷</a>
+                        <a href="#" class="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center hover:opacity-80 transition">▶</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2024 الجسر. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ============ DATA MANAGEMENT ============
+        const defaultData = {
+            images: [
+                { id: 116, title: 'ترند الرقبة الطويلة', category: 'portrait', emoji: '🦒', prompt: `Ultra-detailed stylized digital caricature portrait, intentionally exaggerated long neck (viral trend style),
+exaggerated facial proportions, oversized ears, sharp defined nose,
+expressive face with confident attitude,
+cinematic lighting with dramatic rim light,
+vibrant yet controlled colors,
+hyper-realistic painterly 3D digital painting style,
+smooth clean brush strokes, high contrast details,
+dark blue gradient background with subtle vignette,
+modern sports jersey with realistic fabric texture,
+shallow depth of field, ultra-sharp focus on face,
+professional character design,
+octane render, unreal engine quality,
+8K resolution, studio-quality lighting
+
+💡 ملاحظة: ارفع صورتك الشخصية كمرجع وسيتم تحويلها لكاريكاتير بالرقبة الطويلة الترند.`, trending: true, image: '' },
+                { id: 115, title: 'ترند اللوحة الإسلامية الخشبية', category: 'realistic', emoji: '🕌', prompt: `Ultra-realistic 3D wood-carved Islamic panel with deep relief carving.
+Golden Arabic calligraphy engraved into premium dark walnut wood.
+Old Islamic alley and mosque carved into the background.
+A carved 3D figure matching Mohamed's facial features holding misbaha.
+Warm lantern lighting, spiritual cinematic atmosphere.
+Name engraved at the bottom: "محمد محمود الجندي".
+
+💡 ملاحظة: غيّر اسم "محمد محمود الجندي" إلى اسمك وارفع صورتك كمرجع للحصول على لوحة إسلامية خشبية مخصصة لك.`, trending: true, image: '' },
+                { id: 114, title: 'ترند المانجا الياباني', category: 'portrait', emoji: '🎌', prompt: `Transform the reference image of Mohamed into a dynamic Japanese manga-style illustration.
+Bold black ink outlines, flat solid colors, dramatic motion lines.
+Full body action pose, heroic powerful stance.
+Pure 2D comic illustration, no photorealism, no 3D, no text.
+High-contrast reds, oranges, deep blacks.
+
+💡 ملاحظة: غيّر اسم "Mohamed" إلى اسمك وارفع صورتك كمرجع لتحويلها لستايل المانجا الياباني.`, trending: true, image: '' },
+                { id: 113, title: 'الروحانيات في الكعبة', category: 'realistic', emoji: '🕋', prompt: `Ultra-realistic cinematic image using the reference face of Mohamed with perfect identity accuracy.
+Mohamed standing in front of the Kaaba during Umrah/Hajj, wearing white ihram.
+Holding prayer beads, wearing a smart watch.
+Pilgrims surrounding, soft daylight, spiritual cinematic atmosphere.
+High realism, respectful tone, no text.
+
+💡 ملاحظة: غيّر اسم "Mohamed" إلى اسمك وارفع صورتك كمرجع للحصول على صورة مخصصة لك.`, trending: true, image: '' },
+                { id: 112, title: 'قيادة اليخت في البحر', category: 'realistic', emoji: '🚤', prompt: `Cinematic ultra-realistic shot of Mohamed driving a luxury yacht in open sea.
+Wind moving his clothes slightly, strong confident expression, control and freedom.
+Deep blue ocean, dynamic waves, cinematic sky.
+High-detail realism, dramatic lighting, action-lifestyle mood.
+Vertical 9:16, no text.
+
+💡 ملاحظة: غيّر اسم "Mohamed" إلى اسمك للحصول على صورة مخصصة لك.`, trending: true, image: '' },
+                { id: 111, title: 'شاطئ البحر واليخوت', category: 'realistic', emoji: '🛥️', prompt: `Ultra-realistic cinematic scene of Mohamed wearing a wide white shirt open at the chest and black jeans.
+He walks confidently on a long wooden marina walkway by the sea.
+Luxury yachts docked on both sides, calm blue water, golden sunset light.
+Cinematic realism, soft wind movement, shallow depth of field, high-end fashion lifestyle mood.
+Vertical 9:16, reels format, no text.
+
+💡 ملاحظة: غيّر اسم "Mohamed" إلى اسمك للحصول على صورة مخصصة لك.`, trending: true, image: '' },
+                { id: 110, title: 'ترند الهيبة السينمائية', category: 'portrait', emoji: '🎬', prompt: `Ultra-realistic cinematic luxury portrait of the SAME PERSON as the reference image, with 100% identical facial features, skin tone, beard, hairstyle, and expression.
+Half-body cinematic shot, 45-degree side angle, confident posture, calm powerful presence.
+Wearing a black luxury suit with perfect tailoring, subtle executive elegance.
+Moody cinematic lighting, Rembrandt light, dramatic shadows, shallow depth of field, soft bokeh background.
+Ultra-high resolution, cinematic color grading, elite luxury atmosphere.
+Arabic text at the bottom: "محمد محمود الجندي" written in ornate Arabic Naskh calligraphy, elegant and refined.
+
+💡 ملاحظة: غيّر الاسم "محمد محمود الجندي" إلى اسمك، وارفع صورتك الشخصية كمرجع للحصول على نفس ملامحك.`, trending: true, image: '' },
+                { id: 100, title: 'ترند تقسيم المنتجات', category: 'product', emoji: '🍫', prompt: 'Floating chocolate pieces with rich glossy texture, premium chocolate advertising, white seamless background, high key studio lighting, stacked floating composition, levitating chocolate blocks and shards, crushed cocoa crumbs and melted chocolate droplets scattered in the air, clean minimal layout, crisp soft shadow on surface, ultra realistic, macro product photography, 100mm lens look, f/8 sharp focus, subtle surface texture detail, editorial commercial style, luxury food branding, 8k ultra-high resolution', trending: true, image: '' },
+                { id: 1, title: 'بورتريه سينمائي درامي', category: 'portrait', emoji: '🎭', prompt: 'Cinematic portrait of a mysterious woman with dramatic lighting, golden hour, shallow depth of field, film grain, shot on Arri Alexa, moody atmosphere, professional photography, 8k resolution, hyperrealistic', trending: true, image: '' },
+                { id: 2, title: 'منظر طبيعي خيالي', category: 'nature', emoji: '🏔️', prompt: 'Breathtaking fantasy landscape with floating islands, bioluminescent plants, crystal waterfalls, dramatic sunset, volumetric lighting, matte painting style, concept art, trending on artstation, 8k wallpaper', trending: true, image: '' },
+                { id: 3, title: 'تصميم 3D مستقبلي', category: '3d', emoji: '🤖', prompt: 'Futuristic 3D robot character design, sleek metallic surface, neon accents, studio lighting, octane render, highly detailed, product visualization, cyberpunk aesthetic, 4k', trending: true, image: '' },
+                { id: 4, title: 'لوحة تجريدية حديثة', category: 'abstract', emoji: '🎨', prompt: 'Abstract modern art painting, vibrant color explosions, fluid dynamics, digital art, trending on behance, high contrast, expressive brushstrokes, gallery quality, 4k resolution', trending: false, image: '' },
+                { id: 5, title: 'صورة واقعية احترافية', category: 'realistic', emoji: '📸', prompt: 'Ultra realistic photograph of a professional business executive, corporate headshot, studio lighting, neutral background, sharp focus, Canon EOS R5, 85mm lens, f/1.4 aperture', trending: false, image: '' },
+                { id: 6, title: 'عالم خيالي ساحر', category: 'fantasy', emoji: '🧙', prompt: 'Magical fantasy world with enchanted forest, glowing mushrooms, fairy lights, mystical atmosphere, digital painting, concept art for video game, highly detailed, 8k', trending: true, image: '' },
+                { id: 7, title: 'بورتريه أنيمي ياباني', category: 'portrait', emoji: '🎌', prompt: 'Beautiful anime portrait, Japanese animation style, soft shading, expressive eyes, sakura petals falling, pastel color palette, trending on pixiv, high quality illustration', trending: false, image: '' },
+                { id: 8, title: 'غروب الشمس الدرامي', category: 'nature', emoji: '🌅', prompt: 'Dramatic sunset over the ocean, golden and purple sky, silhouette of palm trees, long exposure photography, HDR, landscape photography, National Geographic style, 8k', trending: false, image: '' }
+            ],
+            videos: [
+                { id: 103, title: 'نزول الجبل الجليدي', category: 'cinematic', emoji: '🏔️', prompt: `person climbing up, POV looking around at the scenery slowly
+
+💡 ملاحظة: فيديو POV (من منظور الشخص الأول) لشخص يتسلق جبلاً جليدياً وينظر حوله ببطء للاستمتاع بالمناظر الطبيعية الخلابة. مثالي لفيديوهات المغامرات والسفر.`, trending: true, image: '' },
+                { id: 102, title: 'الطفل البقرة مع الروبوت', category: 'animation', emoji: '🤖', prompt: `A cute little metallic robot wearing the same outfit and accessories as the subject walks into the scene, they hug each other.
+
+💡 ملاحظة: ارفع صورة طفل أو شخص وسيتحول لفيديو مع روبوت لطيف يرتدي نفس ملابسه ويعانقه.`, trending: true, image: '' },
+                { id: 101, title: 'خروج المعالم من الأرض - الهند', category: 'cinematic', emoji: '🇮🇳', prompt: 'Create a Miniature Landscape-style Animation featuring iconic landmarks and cultural highlights of India. Start with a flat ground surface resembling rich earthy soil under warm sunrise light. Gradually, famous Indian landmarks begin to rise organically from beneath the ground — the Taj Mahal in Agra, an iconic white marble mausoleum symbolizing love; the tall Qutub Minar minaret in Delhi; the historic Red Fort with its majestic walls; the beautiful Hawa Mahal and Amber Fort from Jaipur’s Pink City; and the ancient Elephanta Caves temples carved on an island near Mumbai. Each landmark emerges smoothly like natural growth from the earth, forming a rich miniature 3D landscape. Next, Indian nature scenes begin to appear — lush greenery, rivers, and traditional cultural elements such as decorated elephants and vibrant festival motifs. Soft golden rays sweep across the scene as more details fill the landscape, emphasizing India’s diversity, history, and heritage. Finally, a bold 3D title rises powerfully at the front of the scene, forming the word: “India” in sculpted elegant letters with warm gold and sapphire highlights. Maintain the miniature 3D aesthetic, smooth organic growth motion, and warm cinematic lighting throughout, creating a vibrant and majestic view of India emerging from the ground.', trending: true, image: '' },
+                { id: 1, title: 'إعلان سينمائي للمنتج', category: 'cinematic', emoji: '🎬', prompt: 'Cinematic product advertisement video, smooth camera movement orbiting around a luxury perfume bottle, dramatic lighting, reflections, slow motion liquid splash, professional studio setup, 4K 60fps', trending: true, image: '' },
+                { id: 2, title: 'أنيميشن شخصية 3D', category: 'animation', emoji: '🎮', prompt: '3D character animation, cute mascot walking cycle, Pixar style, smooth motion, expressive face, colorful environment, professional rigging, 24fps loop', trending: true, image: '' },
+                { id: 3, title: 'عرض منتج احترافي', category: 'product', emoji: '📱', prompt: 'Professional product showcase video, smartphone floating and rotating, sleek modern design, gradient background, particle effects, smooth transitions, Apple-style advertisement, 4K', trending: false, image: '' },
+                { id: 4, title: 'موشن جرافيك للشعار', category: 'motion', emoji: '✨', prompt: 'Logo reveal motion graphics, elegant particles assembling into brand logo, golden accents, dark background, cinematic lighting, smooth animation, corporate intro style', trending: true, image: '' },
+                { id: 5, title: 'مشهد طبيعة سينمائي', category: 'cinematic', emoji: '🌲', prompt: 'Cinematic nature scene, drone shot flying through misty mountains, epic orchestral music vibe, volumetric fog, sunrise lighting, documentary style, 4K HDR', trending: false, image: '' },
+                { id: 6, title: 'رسوم متحركة تعليمية', category: 'animation', emoji: '📚', prompt: 'Educational explainer animation, flat design 2D characters, smooth transitions, infographic elements, engaging storytelling, modern color palette, whiteboard animation style', trending: false, image: '' }
+            ],
+            logos: [
+                { id: 100, title: 'كارت بيزنس رسمي فاخر', category: 'business', emoji: '💼', prompt: `Business card design using the FIRST STYLE (الاستايل الأول).
+
+Create a formal, authoritative, high-end military business card with a dark black–navy background, straight geometric gold frames, sharp edges, and premium metallic gold accents.
+
+Main name centered in large gold foil Arabic typography:
+العميد / محمد محمود علي الجندي
+
+Military title below the name in a refined smaller font:
+القوات المسلحة المصرية
+
+Replace the original icon with a minimalist elegant military emblem inspired by the Egyptian Armed Forces symbol (eagle or crossed swords style), designed in metallic gold, placed at the top center exactly like the icon position in the first style.
+
+Typography:
+- Main name: classic Arabic display font inspired by Thuluth / Diwani military calligraphy, gold foil, embossed look
+- Secondary text: clean formal Arabic sans-serif (Cairo / GE SS Two), warm white or light gold
+
+Include the following structured text:
+الرتبة: عميد
+الجهة: القوات المسلحة المصرية
+
+Design rules (must strictly follow the first style):
+- Horizontal business card
+- Size: 90 × 50 mm
+- Sharp straight gold frame
+- Symmetrical centered composition
+- No curved decorative shapes
+- Dark matte background with metallic gold contrast
+- Strong hierarchy: emblem → name → rank → affiliation
+- CMYK color mode
+- 300 DPI
+- Print-ready
+- Subtle golden light reflections on text and frame
+- Ultra-premium official military aesthetic
+
+The final result should reflect dignity, authority, honor, and national pride, while preserving the luxury visual identity of the first style.
+
+💡 ملاحظة: غيّر الاسم وطبيعة العمل حسب حاجتك وسيُنشئ لك كارت بيزنس مخصص.`, trending: true, image: '' },
+                { id: 1, title: 'شعار مينيماليست عصري', category: 'minimalist', emoji: '⚡', prompt: 'Minimalist modern logo design for tech startup, clean geometric shapes, single line art, negative space usage, scalable vector, professional branding, black and white version', trending: true, image: '' },
+                { id: 2, title: 'ماسكوت كرتوني', category: 'mascot', emoji: '🦊', prompt: 'Cute mascot logo design, friendly fox character, playful expression, vibrant orange colors, suitable for gaming company, cartoon style, vector illustration, brand identity', trending: true, image: '' },
+                { id: 3, title: 'شعار 3D معدني', category: '3d', emoji: '🏆', prompt: '3D metallic logo design, chrome and gold materials, luxury brand aesthetic, reflective surfaces, professional render, embossed effect, corporate identity, high-end feel', trending: false, image: '' },
+                { id: 4, title: 'شعار كلاسيكي فينتاج', category: 'vintage', emoji: '🏛️', prompt: 'Vintage classic logo design, hand-drawn ornamental elements, retro typography, aged texture, coffee shop branding, rustic feel, badge style, artisanal aesthetic', trending: true, image: '' },
+                { id: 5, title: 'شعار تقني حديث', category: 'minimalist', emoji: '💻', prompt: 'Modern tech company logo, abstract circuit pattern, gradient blue colors, futuristic design, AI/ML company branding, clean and professional, vector format', trending: false, image: '' },
+                { id: 6, title: 'شعار رياضي ديناميكي', category: 'mascot', emoji: '🦁', prompt: 'Dynamic sports team logo, fierce lion mascot, aggressive pose, bold typography, team colors red and black, esports ready, mascot illustration, competitive gaming', trending: false, image: '' }
+            ],
+            infographics: [
+                { id: 103, title: 'تشريح الفيل - تفصيلي', category: 'medical', emoji: '🐘', prompt: `أنشئ صورة تشريحية تعليمية عالية الدقة للفيل، بنفس الأسلوب الفني المستخدم في صورة تشريح الأسد:
+عرض خارجي واقعي للفيل، مع كشف طبقة العضلات على جانب واحد، ووضع الهيكل العظمي في طبقة منفصلة أعلى الجسم، بالإضافة إلى عرض الأعضاء الداخلية في مخطط انفجاري Exploded View ثلاثي الأبعاد.
+
+المواصفات العامة:
+– جودة فائقة: 8K، إضاءة طبية محايدة، خلفية داكنة (navy blue) لإبراز التفاصيل.
+– جميع التسميات النصية بالعربية فقط، مكتوبة بخط النسخ المزخرف الواضح.
+– استخدام المصطلحات التشريحية الصحيحة الخاصة بالفيلة (African Elephant).
+– الحفاظ على الأسلوب العلمي والواقعية التشريحية الكاملة.
+
+المكونات التشريحية المطلوبة للعرض مع البيانات الصحيحة:
+
+1. الجمجمة (Skull) – ضخمة، تمتلك تجاويف واسعة لارتباط العضلات، وتضم القنوات المخصصة للأنياب (الخفرة العاجية).
+2. العمود الفقري:
+   – 7 فقرات عنقية
+   – 21–22 فقرة صدرية
+   – 3–4 فقرات قطنية
+   – 4 فقرات عجزية ملتحمة
+   – 26–33 فقرة ذيلية (يختلف حسب النوع)
+3. القفص الصدري – واسع وعميق لاستيعاب الرئتين والقلب الكبيرين.
+4. عظم العضد – سميك جداً لتحمل وزن الفيل.
+5. عظم الفخذ – كبير وقوي، مسؤول عن دعم الكتلة الضخمة.
+6. العضلات الصدرية (Pectoralis)
+7. عضلات الكتف الأمامية (Deltoid – Trapezius)
+8. العضلات الرباعية في الأطراف الخلفية (Quadriceps)
+9. القلب – يتراوح بين 12 إلى 21 كيلوجراماً، ويضخ كميات هائلة من الدم.
+10. الشريان الأورطي
+11. الوريد الأجوف
+12. الرئتان – يمتازان بغياب الحويصلات الهوائية التقليدية واستبدالها بغرف هوائية أكبر.
+13. القصبة الهوائية – طويلة وسميكة.
+14. المعدة – بسيطة (ليست مجترة)، تُمهد الطريق لجهاز هضمي ضخم.
+15. الكبد – كبير الحجم مع فصوص عديدة.
+16. الأمعاء الدقيقة – بطول يقارب 25–30 متراً.
+17. الأمعاء الغليظة – الأعور والقولون مع طول يتجاوز 10–12 متراً.
+18. الدماغ – أكبر دماغ بين الثدييات البرية (3.5–5 كجم تقريباً).
+19. الجهاز التناسلي – بحسب النوع (ذكر/أنثى).
+20. الجهاز الجلدي – جلد سميك يصل إلى 2.5 سم مع طيات واضحة.
+21. الأنياب (Tusks) – امتداد لعظام القواطع، قد يصل طولها إلى 2.5 متر.
+22. الخرطوم – عضو عضلي مكوّن من أكثر من 40,000 عضلة منفردة.
+23. الأذن – كبيرة جداً (يصل ارتفاعها إلى 180 سم) وتعمل كمبادل حراري.
+24. القدم – بنية دائرية مزودة بوسادة ليفية عميقة لامتصاص الصدمات.
+
+الأسلوب الفني:
+– تشريح واقعي ثلاثي الأبعاد: ألوان العضلات وردية، العظام بلون عاجي، الأعضاء الداخلية بألوان طبية دقيقة.
+– خطوط المؤشرات دقيقة ومرتبة مع أرقام واضحة.
+– جميع النصوص بالعربية بخط النسخ المزخرف.
+– Medical Illustration – Scientific Anatomy – Exploded View – Hyper-realistic – Arabic Naskh Calligraphy – 8K – Clean Layout.
+
+💡 ملاحظة: يمكنك تغيير اسم الحيوان (الفيل) إلى أي حيوان آخر مع تعديل المعلومات التشريحية المناسبة له.`, trending: true, image: '' },
+                { id: 102, title: 'تشريح الحيوانات - طبي', category: 'medical', emoji: '🔬', prompt: `Ultra-detailed anatomical exploded-view and layered biological infographic of [اسم الكائن الحي هنا], designed as a high-precision educational scientific visualization with absolute anatomical accuracy.
+
+MANDATORY species-accuracy rule:
+Automatically infer and apply the correct real-world anatomy for the organism. If vertebrate, display a complete internal skeleton (skull, vertebral column, rib cage, limb bones). If invertebrate, display correct exoskeleton, segmentation, and structural anatomy. Automatically select the correct respiratory system (lungs, gills, tracheal system, air sacs, etc.). Reproductive system must be included in a neutral, educational, non-explicit manner.
+
+Camera & Composition:
+- 3/4 front isometric scientific render angle.
+- Main body centered and dominant.
+- Outer body partially transparent and opened for clarity.
+- Anatomical systems separated into floating layers around the body in a clean, symmetrical exploded-view hierarchy.
+- Perfect spacing between layers, zero visual clutter.
+- Leader lines never cross, all labels remain fully inside frame.
+
+Layer order (outer → inner, species-appropriate):
+1) Outer covering: skin, hide, scales, shell, or exoskeleton.
+2) Structural support: skeleton or segmented exoskeleton.
+3) Muscular system: major muscle groups only (accurate attachment logic).
+4) Circulatory system: heart and primary vessels only (no capillary noise).
+5) Respiratory system: species-accurate organs.
+6) Digestive system: stomach / crop / gizzard (if applicable), intestines, liver and associated organs.
+7) Nervous system: brain or ganglia and primary nerve pathways.
+8) Reproductive system: core anatomical structures only.
+9) Signature anatomy: highlight unique features (horns, tusks, trunk, wings, fins, tail structures, pouches, antennae, etc.) as emphasized independent layers.
+
+Labeling (STRICT):
+- Thin white leader lines with numeric markers.
+- Typeface: clean minimalist sans-serif, ultra-legible.
+- Label format: "## Part Name (System)" example: "04 Femur (Skeletal)".
+- Total labels: 12–24 only, no repetition, balanced distribution.
+
+Visual Style & Quality:
+- Photorealistic 3D medical-grade anatomy render.
+- Textbook-level scientific infographic clarity.
+- Ultra-sharp detail, high contrast, clean surfaces.
+- 8K resolution, professional educational output.
+
+Lighting & Background:
+- Soft, even, shadow-controlled studio lighting.
+- Background: seamless dark gray or deep navy scientific studio backdrop.
+
+Aspect Ratio: 2:3
+Style: Medical & Biological Infographic, Anatomical Exploded View, Clinical Precision
+
+Negative: blood, gore, horror, surgical scene, open wounds, graphic anatomy, incorrect anatomy, extra or missing organs, distorted proportions, messy exploded layout, crossed leader lines, unreadable labels, cartoon style, watermark, logo
+
+💡 ملاحظة: غيّر [اسم الكائن الحي هنا] إلى اسم الحيوان الذي تريده (مثل: الأسد، الحصان، النسر، السمكة...) وسيُنشئ لك تشريح علمي دقيق له.`, trending: true, image: '' },
+                { id: 101, title: 'إنفوجرافيك الحيوانات - كوميكس', category: 'comics', emoji: '🐘', prompt: `Ultra high-resolution 8K educational comic-style infographic, aspect ratio 16:9, professional comic strip layout, vibrant clean vector-comic illustration mixed with semi-realistic animal illustration, dynamic panels, motion lines, sound effects text like (WHOOSH!, GRUMBLE!, FACT! 🐘), modern flat + detailed hybrid style, clear Arabic typography.
+
+TOP HEADER PANEL:
+Title in bold blue (#2E5CFF):
+"حلقة #1 – الفيـــــــــــــل 🐘: العملاق الذكي – حقائق دقيقة وممتعة عن أكبر الحيوانات البرية"
+Playful background with savanna and jungle silhouettes.
+
+SCENE 1 – PROBLEM (RED THEME #FF4757):
+Comic panel of a curious kid scratching رأسه عند رؤية صورة فيل:
+Dialogue bubble in Egyptian dialect:
+"الفيل ده ليه خرطوم غريب؟ بيعمل إيه؟ بيعيش فين؟ ولا في نوعين؟! 😵‍💫"
+Red confusion icons around and a big question mark.
+
+SCENE 2 – SOLUTION / CORE CONCEPT (BLUE THEME #2E5CFF):
+Visual metaphor: Elephant as "رئيس الغابة الذكي" holding a storyboard showing parts of حياته and traits.
+Dialogue bubble:
+"تعالى نفهم الفيل خطوة بخطوة من جسمه لبيئته وسلوكه!"
+Core Principle Box (Blue):
+"الفيل = أكبر ثدييات أرضية، عاشب، اجتماعي، وذكي جدًا."
+
+SCENE 3 – SIX GREEN PANELS (STEPS) – GREEN THEME #26DE81:
+
+Panel 1: Elephant body diagram with labels (خرطوم – أنياب – آذان – أرجل).
+Text: "جسم الفيل: خرطوم طويل يستخدمه للشرب والأكل والتنفس، وآذان كبيرة لتنظيم الحرارة."
+
+Panel 2: Two types of elephants: African and Asian side by side.
+Text: "أنواع الفيلة: الإفريقي بأذان كبيرة جدًا، والآسيوي بأذان أصغر وأكثر دائرية."
+
+Panel 3: Elephant eating grasses and leaves.
+Text: "الفيل عاشِب: بياكل نباتات، جذور، أوراق، وأحيانًا فواكه – ممكن ياكل لحد 150–300 كجم يوميًا!"
+
+Panel 4: Herd of elephants with baby elephants.
+Text: "يعيش في قطعان اجتماعية تقودها أنثى كبيره (Matriarch) ❤️."
+
+Panel 5: Elephant beside water drinking & spraying.
+Text: "الفيل بيشرب كمية كبيرة من المياه (يمكن لحد ~50 غالون/190 لتر) وبيحب يبرد جسمه بالرمل والماء."
+
+Panel 6: Elephant life stages (Calf, Adult).
+Text: "حياة الفيل: الحمل بين 18–22 شهر – الأطول بين الثدييات البرية."
+
+RESULT PANEL – BIG GREEN PANEL:
+Celebratory scene: Elephants walking proudly في السافانا، الأطفال بيصورتهم.
+Text in bold: "الفيل مش بس ضخم… ده كائن ذكي، اجتماعي، وله دور بيئي مهم جدًا!"
+
+FOOTER TIPS – ORANGE THEME #FFA502:
+Golden tip box with warning icon:
+"أهم معلومة: الفيل عنده ذاكرة قوية جدًا وبيعيش في مجموعات بعلاقات اجتماعية معقدة!"
+Correction note:
+"مفهوم خاطئ: مش كل الفيلة بتقفز.. الفيلة لا تستطيع القفز بسبب وزنها الكبير!"
+
+Color system strictly applied: Red for problems, Blue for concepts, Green for steps & results, Orange for tips.
+
+Clean composition, strong visual hierarchy, readable Arabic text, balanced spacing, modern educational comic infographic style, suitable for social media and print.
+
+💡 ملاحظة: هذا مثال للفيل - يمكنك تغيير اسم الحيوان وسيُنشئ ChatGPT إنفوجرافيك مخصص له.`, trending: true, image: '' },
+                { id: 100, title: 'إنفوجرافيك الأنبياء', category: 'islamic', emoji: '🕌', prompt: `Ultra-detailed Islamic infographic poster design about Prophet Musa (Moses) عليه السلام,
+NO human depiction, NO facial or body representation, purely symbolic and textual Islamic artwork.
+
+Vertical luxurious historical Islamic style, deep emerald green background with subtle aged stone texture,
+ornate engraved gold frame with symmetrical Islamic floral and geometric decorations.
+
+Top main title in elegant Arabic Thuluth-style calligraphy:
+"النبي موسى عليه السلام"
+with embossed metallic gold finish, soft cinematic spiritual lighting.
+
+Clear structured content sections placed inside decorative gold-framed panels, identical layout system:
+
+Section 1 title: "الاسم والنسب"
+Arabic text:
+"موسى بن عمران عليه السلام، نبي الله من بني إسرائيل."
+
+Section 2 title: "الميلاد والنشأة"
+Text:
+"ولد في مصر في زمن فرعون، ونشأ في قصره، ثم كلمه الله تكليمًا."
+
+Section 3 title: "معجزاته"
+Text:
+"العصا، وانشقاق البحر، واليد البيضاء، وإنزال التوراة."
+
+Section 4 title: "دعوتُه ومواجهته"
+Text:
+"أُرسل إلى فرعون وقومه داعيًا إلى توحيد الله، وإنقاذ بني إسرائيل من الظلم."
+
+Section 5 title: "مكانته وفضائله"
+Text:
+"من أولي العزم من الرسل، وأكثر الأنبياء ذكرًا في القرآن الكريم."
+
+Use symbolic 3D gold icons only:
+staff (rod) symbol, parted sea waves, mountain silhouette (Mount Sinai), divine light rays, sacred scroll.
+
+Elegant Arabic Naskh-style font for body text, high readability and balanced spacing.
+Cinematic lighting, engraved gold details, museum-quality Islamic manuscript aesthetic.
+Ultra high resolution, print-ready, 4K–8K quality.
+
+💡 ملاحظة: أعطِ هذا البرومبت لـ ChatGPT أو أي أداة AI واكتب اسم النبي الذي تريده وسيُنشئ لك إنفوجرافيك مخصص له.`, trending: true, image: '' },
+                { id: 1, title: 'إنفوجرافيك إحصائيات', category: 'stats', emoji: '📊', prompt: 'Professional statistics infographic design, clean data visualization, pie charts and bar graphs, modern flat design, corporate color scheme, easy to read typography, business presentation style', trending: true, image: '' },
+                { id: 2, title: 'خطوات العملية', category: 'process', emoji: '🔄', prompt: 'Step-by-step process infographic, numbered workflow diagram, icons for each step, connecting arrows, gradient colors, modern design, instructional graphic, clear hierarchy', trending: true, image: '' },
+                { id: 3, title: 'مقارنة المنتجات', category: 'comparison', emoji: '⚖️', prompt: 'Product comparison infographic, side-by-side layout, feature checkmarks, pricing tiers, pros and cons, clean table design, decision-making visual aid, marketing material', trending: false, image: '' },
+                { id: 4, title: 'خط زمني تاريخي', category: 'timeline', emoji: '📅', prompt: 'Historical timeline infographic, chronological events layout, milestone markers, dates and descriptions, vertical or horizontal design, educational content, museum style presentation', trending: true, image: '' },
+                { id: 5, title: 'إحصائيات وسائل التواصل', category: 'stats', emoji: '📱', prompt: 'Social media statistics infographic, platform icons, engagement metrics, growth charts, viral content style, bold numbers, marketing report design, shareable format', trending: false, image: '' },
+                { id: 6, title: 'دورة حياة المشروع', category: 'process', emoji: '🎯', prompt: 'Project lifecycle infographic, circular process diagram, phase descriptions, milestone achievements, professional business design, project management visual, stakeholder presentation', trending: false, image: '' }
+            ],
+            canva: [
+                { id: 1, title: 'إعلان فيسبوك احترافي', category: 'ads', emoji: '📢', link: 'https://www.canva.com/templates/', guide: 'قالب إعلان فيسبوك جاهز للتعديل بتصميم عصري وجذاب', image: '' },
+                { id: 2, title: 'بوست انستغرام', category: 'social', emoji: '📸', link: 'https://www.canva.com/templates/', guide: 'تصميم منشور انستغرام بأبعاد مثالية 1080x1080', image: '' },
+                { id: 3, title: 'إنفوجرافيك تعليمي', category: 'infographic', emoji: '📊', link: 'https://www.canva.com/templates/', guide: 'قالب إنفوجرافيك تعليمي قابل للتخصيص بالكامل', image: '' },
+                { id: 4, title: 'هوية بصرية كاملة', category: 'branding', emoji: '🎨', link: 'https://www.canva.com/templates/', guide: 'حزمة هوية بصرية تشمل الشعار والألوان والخطوط', image: '' },
+                { id: 5, title: 'ثامبنيل يوتيوب', category: 'thumbnails', emoji: '▶️', link: 'https://www.canva.com/templates/', guide: 'صورة مصغرة ليوتيوب بتصميم يجذب المشاهدات', image: '' },
+                { id: 6, title: 'ستوري انستغرام', category: 'social', emoji: '📱', link: 'https://www.canva.com/templates/', guide: 'قالب ستوري انستغرام بتأثيرات متحركة', image: '' },
+                { id: 7, title: 'بانر إعلاني', category: 'ads', emoji: '🖼️', link: 'https://www.canva.com/templates/', guide: 'بانر إعلاني بأحجام متعددة للمواقع', image: '' },
+                { id: 8, title: 'بطاقة عمل احترافية', category: 'branding', emoji: '💼', link: 'https://www.canva.com/templates/', guide: 'تصميم بطاقة عمل أنيقة وعصرية', image: '' }
+            ],
+            categories: {
+                images: [
+                    { value: 'portrait', label: 'بورتريه' },
+                    { value: 'nature', label: 'طبيعة' },
+                    { value: 'abstract', label: 'تجريدي' },
+                    { value: '3d', label: '3D' },
+                    { value: 'fantasy', label: 'خيالي' },
+                    { value: 'realistic', label: 'واقعي' },
+                    { value: 'product', label: 'منتجات' }
+                ],
+                videos: [
+                    { value: 'cinematic', label: 'سينمائي' },
+                    { value: 'animation', label: 'أنيميشن' },
+                    { value: 'product', label: 'منتجات' },
+                    { value: 'motion', label: 'موشن جرافيك' }
+                ],
+                logos: [
+                    { value: 'minimalist', label: 'مينيماليست' },
+                    { value: 'mascot', label: 'ماسكوت' },
+                    { value: '3d', label: '3D' },
+                    { value: 'vintage', label: 'كلاسيكي' },
+                    { value: 'business', label: 'بطاقات عمل' }
+                ],
+                infographics: [
+                    { value: 'stats', label: 'إحصائيات' },
+                    { value: 'process', label: 'عمليات' },
+                    { value: 'comparison', label: 'مقارنات' },
+                    { value: 'timeline', label: 'خط زمني' },
+                    { value: 'islamic', label: 'إسلامي' },
+                    { value: 'comics', label: 'كوميكس تعليمي' },
+                    { value: 'medical', label: 'طبي/تشريحي' }
+                ],
+                canva: [
+                    { value: 'ads', label: 'إعلانات' },
+                    { value: 'social', label: 'سوشيال ميديا' },
+                    { value: 'infographic', label: 'إنفوجرافيك' },
+                    { value: 'branding', label: 'براندينج' },
+                    { value: 'thumbnails', label: 'ثامبنيل' }
+                ]
+            },
+            settings: {
+                facebookLink: "https://facebook.com/yourpage",
+                adminPassword: "admin123"
+            }
+        };
+
+        function loadData() {
+            const saved = localStorage.getItem('aljisrData');
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (!data.categories) data.categories = defaultData.categories;
+                return data;
+            }
+            localStorage.setItem('aljisrData', JSON.stringify(defaultData));
+            return defaultData;
+        }
+
+        function saveData(data) {
+            localStorage.setItem('aljisrData', JSON.stringify(data));
+        }
+
+        let appData = loadData();
+        let currentPrompt = "";
+        let isAdminLoggedIn = false;
+        let bulkItems = [];
+
+        // ============ NAVIGATION ============
+        function showPage(pageId) {
+            if (pageId === 'admin' && !isAdminLoggedIn) {
+                openAdminLogin();
+                return;
+            }
+
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => {
+                if (l.getAttribute('onclick')?.includes(`'${pageId}'`)) {
+                    l.classList.add('active');
+                }
+            });
+            
+            window.scrollTo(0, 0);
+
+            if (['images', 'videos', 'logos', 'infographics'].includes(pageId)) {
+                renderPromptGrid(pageId);
+                renderFilters(pageId);
+                updatePageCount(pageId);
+            } else if (pageId === 'canva') {
+                renderCanvaGrid();
+                renderCanvaFilters();
+                document.getElementById('canvaCount').textContent = `${appData.canva.length} قالب متاح`;
+            } else if (pageId === 'home') {
+                renderTrendingGrid();
+                updateStatsCounter();
+            } else if (pageId === 'admin') {
+                updateAdminStats();
+                renderManageContent();
+                renderCanvaList();
+                renderCategoriesList();
+                loadSettings();
+                updateBulkCategory();
+                initBulkItems();
+            }
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function updatePageCount(type) {
+            const count = appData[type].length;
+            const el = document.getElementById(`${type}Count`);
+            if (el) el.textContent = `${count} برومبت متاح`;
+        }
+
+        // ============ RENDER FUNCTIONS ============
+        function renderFilters(type) {
+            const container = document.getElementById(`${type}Filters`);
+            const cats = appData.categories[type] || [];
+            const colorMap = { images: 'purple', videos: 'blue', logos: 'amber', infographics: 'green' };
+            const color = colorMap[type];
+            
+            container.innerHTML = `
+                <button class="filter-btn active bg-${color}-600 text-white px-5 py-2 rounded-full font-medium text-sm" onclick="filterItems('${type}', 'all', this)">الكل (${appData[type].length})</button>
+                ${cats.map(c => {
+                    const count = appData[type].filter(i => i.category === c.value).length;
+                    return `<button class="filter-btn bg-gray-200 px-5 py-2 rounded-full font-medium text-sm hover:bg-${color}-100" onclick="filterItems('${type}', '${c.value}', this)">${c.label} (${count})</button>`;
+                }).join('')}
+            `;
+        }
+
+        function renderCanvaFilters() {
+            const container = document.getElementById('canvaFilters');
+            const cats = appData.categories.canva || [];
+            container.innerHTML = `
+                <button class="canva-filter active bg-violet-600 text-white px-5 py-2 rounded-full font-medium text-sm" onclick="filterCanva('all', this)">الكل (${appData.canva.length})</button>
+                ${cats.map(c => {
+                    const count = appData.canva.filter(i => i.category === c.value).length;
+                    return `<button class="canva-filter bg-gray-200 px-5 py-2 rounded-full font-medium text-sm hover:bg-violet-100" onclick="filterCanva('${c.value}', this)">${c.label} (${count})</button>`;
+                }).join('')}
+            `;
+        }
+
+        function renderPromptGrid(type) {
+            const grid = document.getElementById(`${type}Grid`);
+            const items = appData[type] || [];
+            const gradients = {
+                images: 'from-pink-400 to-purple-500',
+                videos: 'from-blue-400 to-cyan-500',
+                logos: 'from-amber-400 to-orange-500',
+                infographics: 'from-green-400 to-emerald-500'
+            };
+            
+            if (items.length === 0) {
+                grid.innerHTML = '<div class="col-span-full text-center py-16 text-gray-500"><span class="text-6xl block mb-4">📭</span><p class="text-xl">لا يوجد محتوى حالياً</p><p class="text-sm mt-2">ابدأ بإضافة برومبتات من لوحة التحكم</p></div>';
+                return;
+            }
+            
+            grid.innerHTML = items.map(item => `
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border" data-category="${item.category}">
+                    <div class="h-36 bg-gradient-to-br ${gradients[type]} flex items-center justify-center text-4xl relative overflow-hidden">
+                        ${item.image ? `<img src="${item.image}" class="absolute inset-0 w-full h-full object-cover">` : item.emoji || '📌'}
+                        ${item.trending ? '<span class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">🔥</span>' : ''}
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-sm mb-3 truncate">${item.title}</h3>
+                        <button onclick="openFollowModal(\`${item.prompt.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)" class="w-full gradient-bg text-white py-2 rounded-xl font-bold text-sm hover:opacity-90 transition flex items-center justify-center gap-2">
+                            <span>🔒</span> عرض البرومبت
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderCanvaGrid(filter = 'all') {
+            const grid = document.getElementById('canvaGrid');
+            const items = filter === 'all' ? appData.canva : appData.canva.filter(t => t.category === filter);
+            
+            if (items.length === 0) {
+                grid.innerHTML = '<div class="col-span-full text-center py-16 text-gray-500"><span class="text-6xl block mb-4">📭</span><p class="text-xl">لا يوجد قوالب حالياً</p></div>';
+                return;
+            }
+            
+            grid.innerHTML = items.map(item => `
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border" data-category="${item.category}">
+                    <div class="h-36 bg-gradient-to-r from-violet-400 to-fuchsia-500 flex items-center justify-center text-4xl overflow-hidden">
+                        ${item.image ? `<img src="${item.image}" class="w-full h-full object-cover">` : item.emoji || '🎨'}
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-sm mb-2 truncate">${item.title}</h3>
+                        <p class="text-gray-500 text-xs mb-3 truncate">${item.guide || ''}</p>
+                        <a href="${item.link}" target="_blank" class="block w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white py-2 rounded-xl font-bold text-sm text-center hover:opacity-90 transition">🎨 افتح في Canva</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderTrendingGrid() {
+            const grid = document.getElementById('trendingGrid');
+            const allItems = [
+                ...appData.images.filter(i => i.trending).map(i => ({...i, type: 'images'})),
+                ...appData.videos.filter(i => i.trending).map(i => ({...i, type: 'videos'})),
+                ...appData.logos.filter(i => i.trending).map(i => ({...i, type: 'logos'})),
+                ...appData.infographics.filter(i => i.trending).map(i => ({...i, type: 'infographics'}))
+            ].slice(0, 8);
+            
+            const gradients = {
+                images: 'from-pink-400 to-purple-500',
+                videos: 'from-blue-400 to-cyan-500',
+                logos: 'from-amber-400 to-orange-500',
+                infographics: 'from-green-400 to-emerald-500'
+            };
+
+            if (allItems.length === 0) {
+                grid.innerHTML = '<div class="col-span-full text-center py-12 text-gray-500"><span class="text-5xl block mb-4">🔥</span><p class="text-lg">لا توجد ترندات حالياً</p><p class="text-sm">أضف برومبتات وحددها كترند من لوحة التحكم</p></div>';
+                return;
+            }
+            
+            grid.innerHTML = allItems.map(item => `
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border">
+                    <div class="h-28 bg-gradient-to-br ${gradients[item.type]} flex items-center justify-center text-3xl relative overflow-hidden">
+                        ${item.image ? `<img src="${item.image}" class="absolute inset-0 w-full h-full object-cover">` : item.emoji || '📌'}
+                        <span class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">🔥</span>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-bold text-sm mb-2 truncate">${item.title}</h3>
+                        <button onclick="openFollowModal(\`${item.prompt.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)" class="w-full gradient-bg text-white py-2 rounded-lg text-xs font-bold hover:opacity-90 transition">
+                            🔒 عرض
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateStatsCounter() {
+            const total = appData.images.length + appData.videos.length + appData.logos.length + appData.infographics.length;
+            const container = document.getElementById('statsCounter');
+            container.innerHTML = `
+                <div class="flex items-center gap-2"><span class="text-2xl">📷</span><span>+${appData.images.length} صور</span></div>
+                <div class="flex items-center gap-2"><span class="text-2xl">🎬</span><span>+${appData.videos.length} فيديو</span></div>
+                <div class="flex items-center gap-2"><span class="text-2xl">🎨</span><span>+${appData.canva.length} قالب</span></div>
+                <div class="flex items-center gap-2"><span class="text-2xl">📊</span><span>+${total} برومبت</span></div>
+            `;
+        }
+
+        // ============ FILTER FUNCTIONS ============
+        function filterItems(type, category, btn) {
+            const grid = document.getElementById(`${type}Grid`);
+            const items = grid.querySelectorAll('[data-category]');
+            
+            items.forEach(item => {
+                item.style.display = (category === 'all' || item.dataset.category === category) ? 'block' : 'none';
+            });
+            
+            document.querySelectorAll(`#${type}Filters .filter-btn`).forEach(b => {
+                b.classList.remove('active', 'bg-purple-600', 'bg-blue-600', 'bg-amber-600', 'bg-green-600', 'text-white');
+                b.classList.add('bg-gray-200');
+            });
+            
+            btn.classList.remove('bg-gray-200');
+            btn.classList.add('active', 'text-white');
+            const colorMap = { images: 'bg-purple-600', videos: 'bg-blue-600', logos: 'bg-amber-600', infographics: 'bg-green-600' };
+            btn.classList.add(colorMap[type]);
+        }
+
+        function filterCanva(category, btn) {
+            renderCanvaGrid(category);
+            document.querySelectorAll('.canva-filter').forEach(b => {
+                b.classList.remove('active', 'bg-violet-600', 'text-white');
+                b.classList.add('bg-gray-200');
+            });
+            btn.classList.remove('bg-gray-200');
+            btn.classList.add('active', 'bg-violet-600', 'text-white');
+        }
+
+        // ============ MODAL FUNCTIONS ============
+        function openFollowModal(prompt) {
+            currentPrompt = prompt;
+            const modal = document.getElementById('followModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.getElementById('followStep').classList.remove('hidden');
+            document.getElementById('promptReveal').classList.add('hidden');
+            document.getElementById('facebookFollowLink').href = appData.settings.facebookLink;
+        }
+
+        function confirmFollow() {
+            document.getElementById('followStep').classList.add('hidden');
+            document.getElementById('promptReveal').classList.remove('hidden');
+            document.getElementById('promptTextDisplay').textContent = currentPrompt;
+        }
+
+        function closeModal() {
+            document.getElementById('followModal').classList.add('hidden');
+            document.getElementById('followModal').classList.remove('flex');
+        }
+
+        function openVIPModal() {
+            document.getElementById('vipModal').classList.remove('hidden');
+            document.getElementById('vipModal').classList.add('flex');
+        }
+
+        function closeVIPModal() {
+            document.getElementById('vipModal').classList.add('hidden');
+            document.getElementById('vipModal').classList.remove('flex');
+        }
+
+        function copyPrompt() {
+            navigator.clipboard.writeText(currentPrompt);
+            showToast('تم نسخ البرومبت بنجاح! 📋');
+        }
+
+        // ============ ADMIN FUNCTIONS ============
+        function openAdminLogin() {
+            document.getElementById('adminLoginModal').classList.remove('hidden');
+            document.getElementById('adminLoginModal').classList.add('flex');
+        }
+
+        function closeAdminLogin() {
+            document.getElementById('adminLoginModal').classList.add('hidden');
+            document.getElementById('adminLoginModal').classList.remove('flex');
+        }
+
+        function loginAdmin(e) {
+            e.preventDefault();
+            const password = document.getElementById('adminPassword').value;
+            if (password === appData.settings.adminPassword) {
+                isAdminLoggedIn = true;
+                closeAdminLogin();
+                showPage('admin');
+                showToast('تم تسجيل الدخول بنجاح! 👋');
+            } else {
+                showToast('كلمة المرور غير صحيحة! ❌', 'error');
+            }
+            document.getElementById('adminPassword').value = '';
+        }
+
+        function logoutAdmin() {
+            isAdminLoggedIn = false;
+            showPage('home');
+            showToast('تم تسجيل الخروج 👋');
+        }
+
+        function switchAdminTab(tab) {
+            document.querySelectorAll('.admin-tab').forEach(t => t.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.remove('active');
+                b.classList.add('bg-gray-200');
+            });
+            
+            document.getElementById(`${tab}Tab`).classList.remove('hidden');
+            event.target.classList.add('active');
+            event.target.classList.remove('bg-gray-200');
+        }
+
+        function updateAdminStats() {
+            document.getElementById('statImages').textContent = appData.images.length;
+            document.getElementById('statVideos').textContent = appData.videos.length;
+            document.getElementById('statLogos').textContent = appData.logos.length;
+            document.getElementById('statInfographics').textContent = appData.infographics.length;
+            document.getElementById('statCanva').textContent = appData.canva.length;
+        }
+
+        // ============ BULK ADD FUNCTIONS ============
+        function initBulkItems() {
+            bulkItems = [];
+            renderBulkItems();
+            addBulkItem();
+        }
+
+        function updateBulkCategory() {
+            const type = document.getElementById('bulkType').value;
+            const select = document.getElementById('bulkCategory');
+            const cats = appData.categories[type] || [];
+            select.innerHTML = cats.map(c => `<option value="${c.value}">${c.label}</option>`).join('');
+        }
+
+        function addBulkItem() {
+            const id = Date.now() + Math.random();
+            bulkItems.push({ id, title: '', prompt: '', emoji: '📌', image: '', trending: false });
+            renderBulkItems();
+        }
+
+        function addMultipleBulkItems(count) {
+            for (let i = 0; i < count; i++) {
+                const id = Date.now() + Math.random() + i;
+                bulkItems.push({ id, title: '', prompt: '', emoji: '📌', image: '', trending: false });
+            }
+            renderBulkItems();
+            showToast(`تمت إضافة ${count} حقول جديدة ✅`);
+        }
+
+        function renderBulkItems() {
+            const container = document.getElementById('bulkItemsContainer');
+            container.innerHTML = bulkItems.map((item, index) => `
+                <div class="bulk-item bg-gray-50 rounded-xl p-4 border-2 border-gray-200" data-id="${item.id}">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-bold text-purple-600">#${index + 1}</span>
+                        <button onclick="removeBulkItem(${item.id})" class="text-red-500 hover:text-red-700 text-sm">🗑️ حذف</button>
+                    </div>
+                    <div class="grid md:grid-cols-4 gap-3">
+                        <input type="text" placeholder="العنوان *" value="${item.title}" onchange="updateBulkItem(${item.id}, 'title', this.value)" class="px-3 py-2 rounded-lg border-2 border-gray-200 focus:border-purple-500 outline-none text-sm">
+                        <input type="text" placeholder="الإيموجي" value="${item.emoji}" onchange="updateBulkItem(${item.id}, 'emoji', this.value)" class="px-3 py-2 rounded-lg border-2 border-gray-200 focus:border-purple-500 outline-none text-sm" maxlength="4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" ${item.trending ? 'checked' : ''} onchange="updateBulkItem(${item.id}, 'trending', this.checked)" class="w-4 h-4">
+                            <span class="text-sm">🔥 ترند</span>
+                        </label>
+                        <div class="flex gap-2">
+                            <input type="file" id="bulkImage${item.id}" accept="image/*" class="hidden" onchange="handleBulkImage(${item.id}, event)">
+                            <button onclick="document.getElementById('bulkImage${item.id}').click()" class="px-3 py-2 bg-gray-200 rounded-lg text-sm hover:bg-gray-300 flex-1">
+                                ${item.image ? '✅ صورة' : '📷 صورة'}
+                            </button>
+                        </div>
+                    </div>
+                    <textarea placeholder="نص البرومبت *" onchange="updateBulkItem(${item.id}, 'prompt', this.value)" class="w-full mt-3 px-3 py-2 rounded-lg border-2 border-gray-200 focus:border-purple-500 outline-none text-sm resize-none" rows="2">${item.prompt}</textarea>
+                </div>
+            `).join('');
+            
+            updateBulkCount();
+        }
+
+        function updateBulkItem(id, field, value) {
+            const item = bulkItems.find(i => i.id === id);
+            if (item) item[field] = value;
+            updateBulkCount();
+        }
+
+        function handleBulkImage(id, e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    updateBulkItem(id, 'image', e.target.result);
+                    renderBulkItems();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function removeBulkItem(id) {
+            bulkItems = bulkItems.filter(i => i.id !== id);
+            renderBulkItems();
+        }
+
+        function updateBulkCount() {
+            const validItems = bulkItems.filter(i => i.title && i.prompt);
+            document.getElementById('bulkCount').textContent = validItems.length;
+            const progress = bulkItems.length > 0 ? (validItems.length / bulkItems.length) * 100 : 0;
+            document.getElementById('bulkProgress').style.width = `${progress}%`;
+        }
+
+        function saveBulkItems() {
+            const type = document.getElementById('bulkType').value;
+            const category = document.getElementById('bulkCategory').value;
+            const validItems = bulkItems.filter(i => i.title && i.prompt);
+            
+            if (validItems.length === 0) {
+                showToast('لا توجد برومبتات صالحة للإضافة! ❌', 'error');
+                return;
+            }
+            
+            validItems.forEach(item => {
+                appData[type].push({
+                    id: Date.now() + Math.random(),
+                    title: item.title,
+                    category: category,
+                    emoji: item.emoji || '📌',
+                    prompt: item.prompt,
+                    trending: item.trending,
+                    image: item.image
+                });
+            });
+            
+            saveData(appData);
+            showToast(`تمت إضافة ${validItems.length} برومبت بنجاح! ✅`);
+            updateAdminStats();
+            initBulkItems();
+        }
+
+        // ============ SINGLE ADD FUNCTIONS ============
+        function updateCategoryOptions() {
+            const type = document.getElementById('promptType').value;
+            const select = document.getElementById('promptCategory');
+            
+            if (!type) {
+                select.innerHTML = '<option value="">اختر النوع أولاً</option>';
+                return;
+            }
+            
+            const cats = appData.categories[type] || [];
+            select.innerHTML = cats.map(c => `<option value="${c.value}">${c.label}</option>`).join('');
+        }
+
+        function previewImage(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('imagePreview').src = e.target.result;
+                    document.getElementById('imagePreviewContainer').classList.remove('hidden');
+                    document.getElementById('uploadPlaceholder').classList.add('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function removeImage(e) {
+            e.stopPropagation();
+            document.getElementById('imageUpload').value = '';
+            document.getElementById('imagePreviewContainer').classList.add('hidden');
+            document.getElementById('uploadPlaceholder').classList.remove('hidden');
+        }
+
+        function addNewPrompt(e) {
+            e.preventDefault();
+            
+            const type = document.getElementById('promptType').value;
+            const imagePreview = document.getElementById('imagePreview');
+            
+            const newPrompt = {
+                id: Date.now(),
+                title: document.getElementById('promptTitle').value,
+                category: document.getElementById('promptCategory').value,
+                emoji: document.getElementById('promptEmoji').value || '📌',
+                prompt: document.getElementById('promptText').value,
+                trending: document.getElementById('promptTrending').checked,
+                image: imagePreview.src && !imagePreview.src.includes('undefined') ? imagePreview.src : ''
+            };
+            
+            appData[type].push(newPrompt);
+            saveData(appData);
+            
+            resetForm();
+            updateAdminStats();
+            renderManageContent();
+            showToast('تم إضافة البرومبت بنجاح! ✅');
+        }
+
+        function resetForm() {
+            document.getElementById('addPromptForm').reset();
+            document.getElementById('imagePreviewContainer').classList.add('hidden');
+            document.getElementById('uploadPlaceholder').classList.remove('hidden');
+            document.getElementById('promptCategory').innerHTML = '<option value="">اختر النوع أولاً</option>';
+        }
+
+        // ============ MANAGE CONTENT ============
+        function renderManageContent() {
+            const filter = document.getElementById('manageFilter')?.value || 'all';
+            const search = document.getElementById('searchContent')?.value.toLowerCase() || '';
+            const container = document.getElementById('contentList');
+            
+            let items = [];
+            const types = filter === 'all' ? ['images', 'videos', 'logos', 'infographics'] : [filter];
+            
+            types.forEach(type => {
+                appData[type].forEach(item => {
+                    items.push({ ...item, type });
+                });
+            });
+            
+            if (search) {
+                items = items.filter(i => i.title.toLowerCase().includes(search) || i.prompt.toLowerCase().includes(search));
+            }
+            
+            document.getElementById('contentCount').textContent = `${items.length} عنصر`;
+            
+            if (items.length === 0) {
+                container.innerHTML = '<div class="text-center py-8 text-gray-500">لا يوجد محتوى</div>';
+                return;
+            }
+            
+            const typeLabels = { images: 'صور', videos: 'فيديو', logos: 'شعار', infographics: 'إنفوجرافيك' };
+            const typeColors = { images: 'pink', videos: 'blue', logos: 'amber', infographics: 'green' };
+            
+            container.innerHTML = items.map(item => `
+                <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition">
+                    <div class="w-12 h-12 bg-gradient-to-br from-${typeColors[item.type]}-400 to-${typeColors[item.type]}-600 rounded-lg flex items-center justify-center text-xl overflow-hidden flex-shrink-0">
+                        ${item.image ? `<img src="${item.image}" class="w-full h-full object-cover">` : item.emoji}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-bold text-sm truncate">${item.title}</h4>
+                        <div class="flex gap-2 text-xs">
+                            <span class="text-${typeColors[item.type]}-600">${typeLabels[item.type]}</span>
+                            ${item.trending ? '<span class="bg-red-100 text-red-600 px-2 rounded-full">🔥</span>' : ''}
+                        </div>
+                    </div>
+                    <div class="flex gap-1 flex-shrink-0">
+                        <button onclick="editItem('${item.type}', ${item.id})" class="p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-xs">✏️</button>
+                        <button onclick="deleteItem('${item.type}', ${item.id})" class="p-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition text-xs">🗑️</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterManageContent() {
+            renderManageContent();
+        }
+
+        function editItem(type, id) {
+            const item = appData[type].find(i => i.id === id);
+            if (!item) return;
+            
+            document.getElementById('editId').value = id;
+            document.getElementById('editType').value = type;
+            document.getElementById('editTitle').value = item.title;
+            document.getElementById('editPrompt').value = item.prompt;
+            document.getElementById('editEmoji').value = item.emoji;
+            document.getElementById('editTrending').checked = item.trending;
+            
+            document.getElementById('editModal').classList.remove('hidden');
+            document.getElementById('editModal').classList.add('flex');
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').classList.add('hidden');
+            document.getElementById('editModal').classList.remove('flex');
+        }
+
+        function saveEdit(e) {
+            e.preventDefault();
+            
+            const type = document.getElementById('editType').value;
+            const id = parseFloat(document.getElementById('editId').value);
+            const index = appData[type].findIndex(i => i.id === id);
+            
+            if (index !== -1) {
+                appData[type][index].title = document.getElementById('editTitle').value;
+                appData[type][index].prompt = document.getElementById('editPrompt').value;
+                appData[type][index].emoji = document.getElementById('editEmoji').value;
+                appData[type][index].trending = document.getElementById('editTrending').checked;
+                
+                saveData(appData);
+                closeEditModal();
+                renderManageContent();
+                showToast('تم حفظ التغييرات! ✅');
+            }
+        }
+
+        function deleteItem(type, id) {
+            if (!confirm('هل أنت متأكد من حذف هذا العنصر؟')) return;
+            
+            appData[type] = appData[type].filter(i => i.id !== id);
+            saveData(appData);
+            updateAdminStats();
+            renderManageContent();
+            showToast('تم الحذف بنجاح! 🗑️');
+        }
+
+        // ============ CATEGORIES ============
+        function renderCategoriesList() {
+            const container = document.getElementById('categoriesList');
+            const types = ['images', 'videos', 'logos', 'infographics', 'canva'];
+            const typeLabels = { images: 'صور AI', videos: 'فيديوهات', logos: 'شعارات', infographics: 'إنفوجرافيك', canva: 'Canva' };
+            
+            let html = '';
+            types.forEach(type => {
+                const cats = appData.categories[type] || [];
+                html += `<div class="mb-4"><h5 class="font-bold text-sm mb-2 text-purple-600">${typeLabels[type]}</h5><div class="flex flex-wrap gap-2">`;
+                cats.forEach(c => {
+                    html += `<span class="category-tag bg-gray-200 px-3 py-1 rounded-full text-xs flex items-center gap-1">${c.label} <button onclick="deleteCategory('${type}', '${c.value}')" class="text-red-500 hover:text-red-700">×</button></span>`;
+                });
+                html += '</div></div>';
+            });
+            
+            container.innerHTML = html;
+        }
+
+        function addNewCategory() {
+            const type = document.getElementById('categoryType').value;
+            const value = document.getElementById('categoryValue').value.trim().toLowerCase();
+            const label = document.getElementById('categoryLabel').value.trim();
+            
+            if (!value || !label) {
+                showToast('يرجى ملء جميع الحقول! ❌', 'error');
+                return;
+            }
+            
+            if (!appData.categories[type]) appData.categories[type] = [];
+            
+            if (appData.categories[type].find(c => c.value === value)) {
+                showToast('هذا التصنيف موجود بالفعل! ❌', 'error');
+                return;
+            }
+            
+            appData.categories[type].push({ value, label });
+            saveData(appData);
+            
+            document.getElementById('categoryValue').value = '';
+            document.getElementById('categoryLabel').value = '';
+            
+            renderCategoriesList();
+            showToast('تم إضافة التصنيف بنجاح! ✅');
+        }
+
+        function deleteCategory(type, value) {
+            if (!confirm('هل أنت متأكد من حذف هذا التصنيف؟')) return;
+            
+            appData.categories[type] = appData.categories[type].filter(c => c.value !== value);
+            saveData(appData);
+            renderCategoriesList();
+            showToast('تم حذف التصنيف! 🗑️');
+        }
+
+        // ============ CANVA ============
+        function addNewCanvaTemplate(e) {
+            e.preventDefault();
+            
+            const newTemplate = {
+                id: Date.now(),
+                title: document.getElementById('canvaTitle').value,
+                category: document.getElementById('canvaCategory').value,
+                emoji: document.getElementById('canvaEmoji').value || '🎨',
+                link: document.getElementById('canvaLink').value,
+                guide: document.getElementById('canvaGuide').value,
+                image: ''
+            };
+            
+            appData.canva.push(newTemplate);
+            saveData(appData);
+            
+            document.getElementById('addCanvaForm').reset();
+            updateAdminStats();
+            renderCanvaList();
+            showToast('تم إضافة القالب بنجاح! ✅');
+        }
+
+        function renderCanvaList() {
+            const container = document.getElementById('canvaList');
+            document.getElementById('canvaListCount').textContent = appData.canva.length;
+            
+            // Update Canva category select
+            const cats = appData.categories.canva || [];
+            document.getElementById('canvaCategory').innerHTML = cats.map(c => `<option value="${c.value}">${c.label}</option>`).join('');
+            
+            if (appData.canva.length === 0) {
+                container.innerHTML = '<div class="col-span-full text-center py-4 text-gray-500">لا توجد قوالب</div>';
+                return;
+            }
+            
+            container.innerHTML = appData.canva.map(item => `
+                <div class="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
+                    <span class="text-xl">${item.emoji}</span>
+                    <div class="flex-1 min-w-0">
+                        <h5 class="font-bold text-xs truncate">${item.title}</h5>
+                    </div>
+                    <button onclick="deleteCanvaTemplate(${item.id})" class="p-1 bg-red-500 text-white rounded text-xs hover:bg-red-600">🗑️</button>
+                </div>
+            `).join('');
+        }
+
+        function deleteCanvaTemplate(id) {
+            if (!confirm('هل أنت متأكد من حذف هذا القالب؟')) return;
+            
+            appData.canva = appData.canva.filter(i => i.id !== id);
+            saveData(appData);
+            updateAdminStats();
+            renderCanvaList();
+            showToast('تم حذف القالب! 🗑️');
+        }
+
+        // ============ SETTINGS ============
+        function loadSettings() {
+            document.getElementById('facebookLink').value = appData.settings.facebookLink;
+        }
+
+        function saveFacebookLink() {
+            appData.settings.facebookLink = document.getElementById('facebookLink').value;
+            saveData(appData);
+            showToast('تم حفظ الرابط! ✅');
+        }
+
+        function changePassword() {
+            const newPass = document.getElementById('newPassword').value;
+            const confirmPass = document.getElementById('confirmPassword').value;
+            
+            if (newPass !== confirmPass) {
+                showToast('كلمات المرور غير متطابقة! ❌', 'error');
+                return;
+            }
+            
+            if (newPass.length < 4) {
+                showToast('كلمة المرور قصيرة جداً! ❌', 'error');
+                return;
+            }
+            
+            appData.settings.adminPassword = newPass;
+            saveData(appData);
+            document.getElementById('newPassword').value = '';
+            document.getElementById('confirmPassword').value = '';
+            showToast('تم تغيير كلمة المرور! ✅');
+        }
+
+        function exportData() {
+            const dataStr = JSON.stringify(appData, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'aljisr-backup-' + new Date().toISOString().split('T')[0] + '.json';
+            a.click();
+            showToast('تم تصدير البيانات! 📥');
+        }
+
+        function importData() {
+            document.getElementById('importFile').click();
+        }
+
+        function handleImport(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const imported = JSON.parse(e.target.result);
+                        appData = imported;
+                        if (!appData.categories) appData.categories = defaultData.categories;
+                        saveData(appData);
+                        updateAdminStats();
+                        renderManageContent();
+                        renderCanvaList();
+                        renderCategoriesList();
+                        showToast('تم استيراد البيانات بنجاح! ✅');
+                    } catch (err) {
+                        showToast('خطأ في الملف! ❌', 'error');
+                    }
+                };
+                reader.readAsText(file);
+            }
+        }
+
+        function clearAllData() {
+            if (!confirm('⚠️ هل أنت متأكد؟ سيتم حذف جميع البيانات!')) return;
+            if (!confirm('⚠️ تأكيد نهائي!')) return;
+            
+            appData = JSON.parse(JSON.stringify(defaultData));
+            saveData(appData);
+            updateAdminStats();
+            renderManageContent();
+            renderCanvaList();
+            renderCategoriesList();
+            showToast('تم حذف جميع البيانات! 🗑️');
+        }
+
+        // ============ UTILITY ============
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMessage');
+            toastMsg.textContent = message;
+            
+            toast.className = 'fixed bottom-4 right-4 px-6 py-3 rounded-xl shadow-lg transform transition-all duration-300 z-50';
+            toast.classList.add(type === 'success' ? 'bg-green-500' : 'bg-red-500', 'text-white');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function submitContact(e) {
+            e.preventDefault();
+            showToast('تم إرسال رسالتك بنجاح! 📬');
+            e.target.reset();
+        }
+
+        // Close modals on outside click
+        ['followModal', 'vipModal', 'adminLoginModal', 'editModal'].forEach(id => {
+            document.getElementById(id).addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.add('hidden');
+                    this.classList.remove('flex');
+                }
+            });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderTrendingGrid();
+            updateStatsCounter();
+        });
+    </script>
+</body>
+</html>
